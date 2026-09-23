@@ -1,0 +1,1264 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "research/post_l0_trajectory_v01/build_v01.py",
+  "data_generation": "20260921T171959Z_c30e629b",
+  "l0_source_plugin": "sol_elow_fived_long_viewer_v022",
+  "l0_source_plugin_version": "0.2.2",
+  "l0_source_field": "marker_viewer_l0",
+  "observation_bars": 40,
+  "dedup_gap_bars": 5,
+  "five_dimension_mapping": {
+    "note": "任务书中的五维为维度名称，markers.parquet 无同名字面列；本轮映射到项目已存在字段，类别列沿用 sol_fived_long_viewer_v01/calculator.py 第 858-892 行已存在的同名映射，未新增任何 Pine 公式。",
+    "dimensions": {
+      "direction_control": {
+        "raw_fields": [
+          "direction_above_sma",
+          "direction_sma_up",
+          "direction_ema_up"
+        ],
+        "state_column": "direction_state",
+        "categories": [
+          "UP",
+          "UP-ATTEMPT",
+          "WEAK"
+        ],
+        "primary_numeric_for_change_tracking": "direction_above_sma"
+      },
+      "volume_drive": {
+        "raw_fields": [
+          "vp_ratio",
+          "vp_average5",
+          "vp_average10",
+          "vp_average20",
+          "vp_slope",
+          "flow_panic",
+          "flow_expansion",
+          "flow_healthy",
+          "flow_increasing",
+          "flow_cooling"
+        ],
+        "state_column": "flow_state",
+        "categories": [
+          "EXPANDING",
+          "ACTIVE",
+          "COOLING"
+        ],
+        "primary_numeric_for_change_tracking": "vp_ratio"
+      },
+      "velocity": {
+        "raw_fields": [
+          "velocity5",
+          "velocity10",
+          "velocity20",
+          "velocity_positive",
+          "velocity_strong",
+          "velocity_slowing",
+          "acceleration5_20",
+          "acceleration_positive",
+          "acceleration_negative",
+          "acceleration_improving"
+        ],
+        "state_column": "velocity_state",
+        "categories": [
+          "FAST-UP",
+          "UP",
+          "DOWN"
+        ],
+        "primary_numeric_for_change_tracking": "velocity5"
+      },
+      "path_quality": {
+        "raw_fields": [
+          "efficiency_rate5",
+          "efficiency_rate10",
+          "efficiency_rate20",
+          "efficiency_positive",
+          "efficiency_improving",
+          "efficiency_weakening"
+        ],
+        "state_column": "efficiency_state",
+        "categories": [
+          "IMPROVING",
+          "POSITIVE",
+          "WEAK"
+        ],
+        "primary_numeric_for_change_tracking": "efficiency_rate5"
+      },
+      "velocity_phase": {
+        "raw_fields": [
+          "acceleration5_20",
+          "acceleration_positive",
+          "acceleration_negative",
+          "acceleration_improving"
+        ],
+        "state_column": "acceleration_state",
+        "categories": [
+          "POSITIVE",
+          "NEGATIVE",
+          "FLAT"
+        ],
+        "primary_numeric_for_change_tracking": "acceleration5_20"
+      }
+    },
+    "task_book_alias": {
+      "方向控制": "direction_control",
+      "成交推动": "volume_drive",
+      "推进速度": "velocity",
+      "路径质量": "path_quality",
+      "速度相位": "velocity_phase"
+    },
+    "naming_ambiguity_note": "任务书中「速度相位」既可能对应 acceleration_state（节奏/相位层，本轮采用），也可能被理解为 velocity_state。本轮两者都输出：velocity_state 归入推进速度，acceleration_state 归入速度相位。"
+  },
+  "per_bar_field_count": 280,
+  "per_bar_fields": {
+    "event_id": {
+      "class": "research_derived",
+      "zh": "L0 去重簇编号"
+    },
+    "first_l0_time": {
+      "class": "research_derived",
+      "zh": "簇内第一根 L0 的 UTC open_time"
+    },
+    "current_open_time_utc": {
+      "class": "research_derived",
+      "zh": "当根 open_time（UTC，ISO8601）"
+    },
+    "bars_since_first_l0": {
+      "class": "research_derived",
+      "zh": "自簇内第一根 L0 起的根数（观察起点=0）"
+    },
+    "bars_since_last_l0": {
+      "class": "research_derived",
+      "zh": "自簇内最后一根 L0 起的根数"
+    },
+    "bars_since_cluster_low": {
+      "class": "research_derived",
+      "zh": "自簇内最低价根起的根数"
+    },
+    "open_time_utc": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "input_open": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "input_high": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "input_low": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "input_close": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "quote_volume": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "input_is_closed": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "symbol": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "market": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "interval": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "close_time_utc": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "source_transaction_id": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "source_master_sha256": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "source_btc_master_sha256": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "plugin_id": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "plugin_version": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "source_pine_sha256": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "warmup_complete": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "calculation_status": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "bar_index": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "input_volume": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "input_trade_count": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "close_1": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "close_5": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "close_10": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "close_20": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "sma20_1": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "sma20_3": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "ema50_3": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "acceleration5_20_1": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "lowest_low20_previous": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "lowest_low20_prev_elow": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "btc_sma20_3": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "quote_volume_ma20": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "vp_ratio": {
+      "class": "plugin_existing",
+      "zh": "成交额 / 20 根成交额均值（插件原始值）"
+    },
+    "vp_average5": {
+      "class": "plugin_existing",
+      "zh": "vp_ratio 的 5 根均值"
+    },
+    "vp_average10": {
+      "class": "plugin_existing",
+      "zh": "vp_ratio 的 10 根均值"
+    },
+    "vp_average20": {
+      "class": "plugin_existing",
+      "zh": "vp_ratio 的 20 根均值"
+    },
+    "vp_slope": {
+      "class": "plugin_existing",
+      "zh": "vp_average5 - vp_average10"
+    },
+    "sma20": {
+      "class": "plugin_existing",
+      "zh": "SOL 20 根 SMA"
+    },
+    "ema50": {
+      "class": "plugin_existing",
+      "zh": "SOL 50 根 EMA"
+    },
+    "log_return5": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "log_return10": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "log_return20": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "velocity5": {
+      "class": "plugin_existing",
+      "zh": "logReturn5 / 5（插件 CF-15）"
+    },
+    "velocity10": {
+      "class": "plugin_existing",
+      "zh": "logReturn10 / 10（插件 CF-16）"
+    },
+    "velocity20": {
+      "class": "plugin_existing",
+      "zh": "logReturn20 / 20（插件 CF-17）"
+    },
+    "efficiency_rate5": {
+      "class": "plugin_existing",
+      "zh": "velocity5 / vpAverage5（插件 CF-18）"
+    },
+    "efficiency_rate10": {
+      "class": "plugin_existing",
+      "zh": "velocity10 / vpAverage10（插件 CF-19）"
+    },
+    "efficiency_rate20": {
+      "class": "plugin_existing",
+      "zh": "velocity20 / vpAverage20（插件 CF-20）"
+    },
+    "acceleration5_20": {
+      "class": "plugin_existing",
+      "zh": "velocity5 - velocity20（插件 CF-21）"
+    },
+    "lowest_range": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "highest_range": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "range_denominator": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "range_position": {
+      "class": "plugin_existing",
+      "zh": "位置区间百分比（120 根）"
+    },
+    "bar_range": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "lower_wick": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "lower_wick_percent": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "return10": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "setup_score": {
+      "class": "plugin_existing",
+      "zh": "L0 低位评分（插件）"
+    },
+    "bottom_score": {
+      "class": "plugin_existing",
+      "zh": "E_low 底部评分（插件）"
+    },
+    "trend_score": {
+      "class": "plugin_existing",
+      "zh": "趋势评分（插件）"
+    },
+    "bars_since_l0": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "bars_since_confirm": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "bars_since_elow": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "bars_since_viewer_cross": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "btc_close": {
+      "class": "plugin_existing",
+      "zh": "BTC 3H 收盘（插件，按 UTC open_time 精确对齐）"
+    },
+    "btc_sma20": {
+      "class": "plugin_existing",
+      "zh": "BTC 20 根 SMA（插件）"
+    },
+    "direction_above_sma": {
+      "class": "plugin_existing",
+      "zh": "收盘是否高于 SOL sma20（插件原始值）"
+    },
+    "direction_sma_up": {
+      "class": "plugin_existing",
+      "zh": "sma20 是否高于 sma20[3]（插件原始值）"
+    },
+    "direction_ema_up": {
+      "class": "plugin_existing",
+      "zh": "ema50 是否高于 ema50[3]（插件原始值）"
+    },
+    "cross_up_sma20": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "cross_down_sma20": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "velocity_positive": {
+      "class": "plugin_existing",
+      "zh": "velocity5 > 0（插件条件）"
+    },
+    "velocity_strong": {
+      "class": "plugin_existing",
+      "zh": "velocity5 >= 0.01（插件阈值）"
+    },
+    "velocity_slowing": {
+      "class": "plugin_existing",
+      "zh": "velocity5 < velocity20 且 velocity20 > 0（插件条件）"
+    },
+    "efficiency_positive": {
+      "class": "plugin_existing",
+      "zh": "efficiencyRate5 > 0（插件条件）"
+    },
+    "efficiency_improving": {
+      "class": "plugin_existing",
+      "zh": "efficiencyRate5 > efficiencyRate5[1]"
+    },
+    "efficiency_weakening": {
+      "class": "plugin_existing",
+      "zh": "efficiencyRate5 走弱（插件条件）"
+    },
+    "acceleration_positive": {
+      "class": "plugin_existing",
+      "zh": "acceleration5_20 > 0"
+    },
+    "acceleration_negative": {
+      "class": "plugin_existing",
+      "zh": "acceleration5_20 < 0"
+    },
+    "acceleration_improving": {
+      "class": "plugin_existing",
+      "zh": "acceleration5_20 > acceleration5_20[1]"
+    },
+    "position_low": {
+      "class": "plugin_existing",
+      "zh": "rangePosition <= 35"
+    },
+    "position_mid_low": {
+      "class": "plugin_existing",
+      "zh": "35 < rangePosition <= 50"
+    },
+    "position_high": {
+      "class": "plugin_existing",
+      "zh": "rangePosition >= 65"
+    },
+    "price_low20": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "lower_wick_strong": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "recent_downtrend": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "flow_panic": {
+      "class": "plugin_existing",
+      "zh": "vp_ratio >= 1.50（插件阈值，本轮不改）"
+    },
+    "flow_expansion": {
+      "class": "plugin_existing",
+      "zh": "vp_ratio >= 1.20（插件阈值，本轮不改）"
+    },
+    "flow_healthy": {
+      "class": "plugin_existing",
+      "zh": "vp_ratio >= 1.00（插件阈值，本轮不改）"
+    },
+    "flow_increasing": {
+      "class": "plugin_existing",
+      "zh": "vp_slope > 0（插件条件）"
+    },
+    "downside_deceleration": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "downside_efficiency_repair": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "setup_location_ok": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "setup_behavior_ok": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "setup_flow_ok": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_l0_raw": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "btc_sma_up": {
+      "class": "plugin_existing",
+      "zh": "btc_sma20 > btc_sma20[3]（插件）"
+    },
+    "btc_above_sma": {
+      "class": "plugin_existing",
+      "zh": "BTC 收盘 > btc_sma20（插件）"
+    },
+    "btc_direction_raw": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "btc_direction_ok": {
+      "class": "plugin_existing",
+      "zh": "插件 BTC 方向过滤结果（原始字段，仅作环境解释）"
+    },
+    "viewer_setup_inside_window": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_cross_still_valid": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_f5_raw": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "f5_suppressed_by_event_lock": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "close_up_vs_prev": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "trend_direction_ok": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "trend_five_d_ok": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "inside_upgrade_review": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_review_expired": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "trend_upgrade_raw": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "flow_cooling": {
+      "class": "plugin_existing",
+      "zh": "vp_average5 < 1.0 且 vp_slope < 0（插件条件）"
+    },
+    "high_area_weakening": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_w_raw": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_x_raw": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_r_raw": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "price_ll20": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "range_pos35_ok": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "range_pos50_ok": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "ret10_drop_ok": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "lower_wick_ok": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "vp_panic_ok": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "vp_extreme_ok": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "signal_elow_core": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "signal_elow_standard_only": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "signal_flong_w5_raw": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_cross_seen_prev": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_cross_bar_index_prev": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "event_phase_prev": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "event_phase_at_upgrade_gate": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "event_phase_at_weakening_gate": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "event_phase_at_break_gate": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "event_phase_at_recovery_gate": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "trend_upgrade_sent_prev": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "weakening_sent_prev": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "confirm_bar_index_prev": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_cross_seen": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_cross_bar_index": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_f5_sent_prev": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "viewer_f5_sent": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "current_l0_index": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "event_phase": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "confirm_bar_index": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "trend_upgrade_sent": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "weakening_sent": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "phase_text": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "setup_score_threshold": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "trend_score_threshold": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "bottom_score_threshold": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_sma20": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_sma20_3": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_ema50_3": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_range_position": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_velocity5": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_velocity20": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_acceleration5_20": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_vp_ratio": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_vp_average5": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_btc_close": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_btc_sma20": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_btc_sma20_3": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_bars_since_elow": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "na_viewer_cross_bar_index": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "missing_btc_dependency": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "marker_viewer_l0": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "marker_viewer_f5": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "marker_viewer_t": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "marker_viewer_w": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "marker_viewer_x": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "marker_viewer_r": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "marker_el_low": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "marker_el_core": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "marker_fl5": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "marker_confluence_l0_el": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "marker_confluence_f5_fl5": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "marker_confluence_w_el": {
+      "class": "plugin_existing",
+      "zh": "v022 插件原始输出列（未修改）"
+    },
+    "idx": {
+      "class": "research_derived",
+      "zh": "SOL 3H 序列行位置（0 起）"
+    },
+    "direction_state": {
+      "class": "project_existing_state_mapping",
+      "zh": "direction_control 的类别列（项目已存在映射，本轮不新增公式）"
+    },
+    "flow_state": {
+      "class": "project_existing_state_mapping",
+      "zh": "volume_drive 的类别列（项目已存在映射，本轮不新增公式）"
+    },
+    "velocity_state": {
+      "class": "project_existing_state_mapping",
+      "zh": "velocity 的类别列（项目已存在映射，本轮不新增公式）"
+    },
+    "efficiency_state": {
+      "class": "project_existing_state_mapping",
+      "zh": "path_quality 的类别列（项目已存在映射，本轮不新增公式）"
+    },
+    "acceleration_state": {
+      "class": "project_existing_state_mapping",
+      "zh": "velocity_phase 的类别列（项目已存在映射，本轮不新增公式）"
+    },
+    "btc_open": {
+      "class": "research_derived",
+      "zh": "研究派生列"
+    },
+    "btc_high": {
+      "class": "research_derived",
+      "zh": "研究派生列"
+    },
+    "btc_low": {
+      "class": "research_derived",
+      "zh": "研究派生列"
+    },
+    "btc_close_master": {
+      "class": "research_derived",
+      "zh": "BTC 3H Master 原始收盘（独立复算，用于交叉校验）"
+    },
+    "btc_sma20_master": {
+      "class": "research_derived",
+      "zh": "BTC 3H Master 复算 SMA20"
+    },
+    "btc_prev_close": {
+      "class": "research_derived",
+      "zh": "研究派生列"
+    },
+    "btc_prev3_close": {
+      "class": "research_derived",
+      "zh": "研究派生列"
+    },
+    "btc_prev5_close": {
+      "class": "research_derived",
+      "zh": "研究派生列"
+    },
+    "btc_sma20_3_master": {
+      "class": "research_derived",
+      "zh": "研究派生列"
+    },
+    "btc_one_bar_return": {
+      "class": "research_derived",
+      "zh": "BTC 收盘 / 前一根 - 1（本模块按 Master 复算）"
+    },
+    "btc_three_bar_return": {
+      "class": "research_derived",
+      "zh": "BTC 收盘 / close[3] - 1（本模块按 Master 复算）"
+    },
+    "btc_velocity5": {
+      "class": "research_derived",
+      "zh": "BTC log(close/close[5])/5（沿用 CF-15 定义，本模块复算）"
+    },
+    "btc_above_sma20_master": {
+      "class": "research_derived",
+      "zh": "BTC 3H Master 复算 是否高于 SMA20"
+    },
+    "btc_sma_up_master": {
+      "class": "research_derived",
+      "zh": "BTC 3H Master 复算 sma20 > sma20[3]"
+    },
+    "btc_direction_environment": {
+      "class": "research_derived",
+      "zh": "BTC_UP_AND_RISING / BTC_ABOVE_SMA_ONLY / BTC_BELOW_SMA / BTC_MISSING"
+    },
+    "return_from_first_l0_close": {
+      "class": "research_derived",
+      "zh": "收盘 / 簇内第一根 L0 收盘 - 1"
+    },
+    "return_from_l0_low": {
+      "class": "research_derived",
+      "zh": "收盘 / 簇内最低价 - 1（任务字段 return_from_l0_low）"
+    },
+    "return_from_first_l0_bar_low": {
+      "class": "research_derived",
+      "zh": "收盘 / 第一根 L0 的最低价 - 1"
+    },
+    "return_from_first_l0_high": {
+      "class": "research_derived",
+      "zh": "收盘 / 第一根 L0 的最高价 - 1"
+    },
+    "highest_close_since_l0": {
+      "class": "research_derived",
+      "zh": "自观察起点到当根的滚动最高收盘"
+    },
+    "highest_high_since_l0": {
+      "class": "research_derived",
+      "zh": "自观察起点到当根的滚动最高价"
+    },
+    "lowest_close_since_l0": {
+      "class": "research_derived",
+      "zh": "自观察起点到当根的滚动最低收盘"
+    },
+    "lowest_low_since_l0": {
+      "class": "research_derived",
+      "zh": "自观察起点到当根的滚动最低价"
+    },
+    "new_close_high_since_l0": {
+      "class": "research_derived",
+      "zh": "当根收盘是否创观察窗口内新高（首根恒 False）"
+    },
+    "new_high_since_l0": {
+      "class": "research_derived",
+      "zh": "当根最高价是否创观察窗口内新高"
+    },
+    "bars_since_last_close_high": {
+      "class": "research_derived",
+      "zh": "距最近一次收盘新高的根数"
+    },
+    "distance_from_running_high": {
+      "class": "research_derived",
+      "zh": "收盘相对滚动最高收盘的位置（负值=低于高点）"
+    },
+    "drawdown_from_running_high": {
+      "class": "research_derived",
+      "zh": "自最高点确立以来出现过的最深回撤（截至当根）"
+    },
+    "previous_attack_gain_retained": {
+      "class": "research_derived",
+      "zh": "（收盘 - 窗口最低价）/（滚动最高收盘 - 窗口最低价）：本轮涨幅中当前保留的比例；不依赖腿标签"
+    },
+    "close_above_sma20": {
+      "class": "research_derived",
+      "zh": "收盘是否高于 sma20"
+    },
+    "one_bar_return": {
+      "class": "research_derived",
+      "zh": "收盘 / 前一根收盘 - 1（历史根，不用未来根）"
+    },
+    "three_bar_return": {
+      "class": "research_derived",
+      "zh": "收盘 / close[3] - 1"
+    },
+    "five_bar_return": {
+      "class": "research_derived",
+      "zh": "收盘 / close[5] - 1"
+    },
+    "bar_body_direction": {
+      "class": "research_derived",
+      "zh": "实体方向 UP / DOWN / FLAT"
+    },
+    "body_to_range_ratio": {
+      "class": "research_derived",
+      "zh": "|close-open| / (high-low)"
+    },
+    "upper_wick_ratio": {
+      "class": "research_derived",
+      "zh": "(high - max(open,close)) / (high-low)"
+    },
+    "lower_wick_ratio": {
+      "class": "research_derived",
+      "zh": "(min(open,close) - low) / (high-low)；与插件 lower_wick_percent 同口径"
+    },
+    "true_range": {
+      "class": "research_derived",
+      "zh": "max(high-low, |high-prev_close|, |low-prev_close|)"
+    },
+    "vp_ratio_prev": {
+      "class": "research_derived",
+      "zh": "前一根 vp_ratio"
+    },
+    "vp_ratio_delta_prev": {
+      "class": "research_derived",
+      "zh": "vp_ratio - vp_ratio[1]"
+    },
+    "flow_price_agreement": {
+      "class": "research_derived",
+      "zh": "成交变化是否产生同向价格成果：VOL_UP_PRICE_UP / VOL_UP_PRICE_DOWN / VOL_DOWN_PRICE_UP / VOL_DOWN_PRICE_DOWN"
+    },
+    "direction_control_category": {
+      "class": "research_derived",
+      "zh": "direction_control 当根类别"
+    },
+    "direction_control_category_prev": {
+      "class": "research_derived",
+      "zh": "direction_control 前一根类别（窗口内）"
+    },
+    "direction_control_changed_vs_prev": {
+      "class": "research_derived",
+      "zh": "direction_control 相对前一根是否切换"
+    },
+    "direction_control_category_path_last3": {
+      "class": "research_derived",
+      "zh": "direction_control 最近 3 根类别路径（含当根，最多 3 个，用 > 连接）"
+    },
+    "direction_control_path_last3_available_n": {
+      "class": "research_derived",
+      "zh": "direction_control 最近 3 根路径实际可用根数（窗口起点附近会小于 3）"
+    },
+    "direction_control_changes_in_last3": {
+      "class": "research_derived",
+      "zh": "direction_control 最近 3 次根间切换次数"
+    },
+    "direction_control_primary_raw_prev": {
+      "class": "research_derived",
+      "zh": "direction_control 主原始值的前一根值"
+    },
+    "direction_control_primary_raw_delta_prev": {
+      "class": "research_derived",
+      "zh": "direction_control 主原始值的一阶差"
+    },
+    "volume_drive_category": {
+      "class": "research_derived",
+      "zh": "volume_drive 当根类别"
+    },
+    "volume_drive_category_prev": {
+      "class": "research_derived",
+      "zh": "volume_drive 前一根类别（窗口内）"
+    },
+    "volume_drive_changed_vs_prev": {
+      "class": "research_derived",
+      "zh": "volume_drive 相对前一根是否切换"
+    },
+    "volume_drive_category_path_last3": {
+      "class": "research_derived",
+      "zh": "volume_drive 最近 3 根类别路径（含当根，最多 3 个，用 > 连接）"
+    },
+    "volume_drive_path_last3_available_n": {
+      "class": "research_derived",
+      "zh": "volume_drive 最近 3 根路径实际可用根数（窗口起点附近会小于 3）"
+    },
+    "volume_drive_changes_in_last3": {
+      "class": "research_derived",
+      "zh": "volume_drive 最近 3 次根间切换次数"
+    },
+    "volume_drive_primary_raw_prev": {
+      "class": "research_derived",
+      "zh": "volume_drive 主原始值的前一根值"
+    },
+    "volume_drive_primary_raw_delta_prev": {
+      "class": "research_derived",
+      "zh": "volume_drive 主原始值的一阶差"
+    },
+    "velocity_category": {
+      "class": "research_derived",
+      "zh": "velocity 当根类别"
+    },
+    "velocity_category_prev": {
+      "class": "research_derived",
+      "zh": "velocity 前一根类别（窗口内）"
+    },
+    "velocity_changed_vs_prev": {
+      "class": "research_derived",
+      "zh": "velocity 相对前一根是否切换"
+    },
+    "velocity_category_path_last3": {
+      "class": "research_derived",
+      "zh": "velocity 最近 3 根类别路径（含当根，最多 3 个，用 > 连接）"
+    },
+    "velocity_path_last3_available_n": {
+      "class": "research_derived",
+      "zh": "velocity 最近 3 根路径实际可用根数（窗口起点附近会小于 3）"
+    },
+    "velocity_changes_in_last3": {
+      "class": "research_derived",
+      "zh": "velocity 最近 3 次根间切换次数"
+    },
+    "velocity_primary_raw_prev": {
+      "class": "research_derived",
+      "zh": "velocity 主原始值的前一根值"
+    },
+    "velocity_primary_raw_delta_prev": {
+      "class": "research_derived",
+      "zh": "velocity 主原始值的一阶差"
+    },
+    "path_quality_category": {
+      "class": "research_derived",
+      "zh": "path_quality 当根类别"
+    },
+    "path_quality_category_prev": {
+      "class": "research_derived",
+      "zh": "path_quality 前一根类别（窗口内）"
+    },
+    "path_quality_changed_vs_prev": {
+      "class": "research_derived",
+      "zh": "path_quality 相对前一根是否切换"
+    },
+    "path_quality_category_path_last3": {
+      "class": "research_derived",
+      "zh": "path_quality 最近 3 根类别路径（含当根，最多 3 个，用 > 连接）"
+    },
+    "path_quality_path_last3_available_n": {
+      "class": "research_derived",
+      "zh": "path_quality 最近 3 根路径实际可用根数（窗口起点附近会小于 3）"
+    },
+    "path_quality_changes_in_last3": {
+      "class": "research_derived",
+      "zh": "path_quality 最近 3 次根间切换次数"
+    },
+    "path_quality_primary_raw_prev": {
+      "class": "research_derived",
+      "zh": "path_quality 主原始值的前一根值"
+    },
+    "path_quality_primary_raw_delta_prev": {
+      "class": "research_derived",
+      "zh": "path_quality 主原始值的一阶差"
+    },
+    "velocity_phase_category": {
+      "class": "research_derived",
+      "zh": "velocity_phase 当根类别"
+    },
+    "velocity_phase_category_prev": {
+      "class": "research_derived",
+      "zh": "velocity_phase 前一根类别（窗口内）"
+    },
+    "velocity_phase_changed_vs_prev": {
+      "class": "research_derived",
+      "zh": "velocity_phase 相对前一根是否切换"
+    },
+    "velocity_phase_category_path_last3": {
+      "class": "research_derived",
+      "zh": "velocity_phase 最近 3 根类别路径（含当根，最多 3 个，用 > 连接）"
+    },
+    "velocity_phase_path_last3_available_n": {
+      "class": "research_derived",
+      "zh": "velocity_phase 最近 3 根路径实际可用根数（窗口起点附近会小于 3）"
+    },
+    "velocity_phase_changes_in_last3": {
+      "class": "research_derived",
+      "zh": "velocity_phase 最近 3 次根间切换次数"
+    },
+    "velocity_phase_primary_raw_prev": {
+      "class": "research_derived",
+      "zh": "velocity_phase 主原始值的前一根值"
+    },
+    "velocity_phase_primary_raw_delta_prev": {
+      "class": "research_derived",
+      "zh": "velocity_phase 主原始值的一阶差"
+    },
+    "velocity_phase_duration_bars": {
+      "class": "research_derived",
+      "zh": "速度相位（acceleration_state）已持续的根数，窗口内计算"
+    },
+    "l0_count": {
+      "class": "research_derived",
+      "zh": "簇内 L0 根数"
+    },
+    "cluster_low_time": {
+      "class": "research_derived",
+      "zh": "簇内最低价根的 UTC open_time"
+    },
+    "observation_start_pos": {
+      "class": "research_derived",
+      "zh": "观察起点在 SOL 3H 序列中的行位置"
+    },
+    "observation_bars_requested": {
+      "class": "research_derived",
+      "zh": "请求观察根数（40）"
+    },
+    "observation_bars_available": {
+      "class": "research_derived",
+      "zh": "实际可用已收盘根数"
+    },
+    "right_censored": {
+      "class": "research_derived",
+      "zh": "数据末端不足 40 根则为 True"
+    },
+    "bars_since_l0_viewer_plugin": {
+      "class": "plugin_existing",
+      "zh": "插件原生 bars_since_l0（Pine ta.barssince(viewerL0)）"
+    },
+    "stratum": {
+      "class": "research_derived",
+      "zh": "研究派生列"
+    },
+    "selected_case": {
+      "class": "research_derived",
+      "zh": "研究派生列"
+    }
+  },
+  "candidate_leg_variants": [
+    {
+      "variant": "swing3",
+      "kind": "retracement",
+      "threshold": 0.03
+    },
+    {
+      "variant": "swing5",
+      "kind": "retracement",
+      "threshold": 0.05
+    },
+    {
+      "variant": "swing8",
+      "kind": "retracement",
+      "threshold": 0.08
+    },
+    {
+      "variant": "sma20_cross",
+      "kind": "structural",
+      "threshold": null
+    }
+  ],
+  "candidate_leg_note": "候选腿段用机械边界切分，多个宽松版本并列；不输出最终 ATTACK/PULLBACK/RECOVER 标签；任一版本都不得宣称为最终公式。",
+  "path_anchor_note": "return_from_l0_low 以「簇内最低价」为基准；同时输出 return_from_first_l0_bar_low、return_from_first_l0_close 以便切换到其它观察起点。",
+  "prohibited": [
+    "不修改冻结 Pine / 插件 / Master / current.json / Registry",
+    "不使用未来 K 线",
+    "不统计、不回测、不优化、不扫描",
+    "不写胜率/盈亏比/参数最优/正式阈值/FORMAL候选"
+  ]
+}

@@ -1,0 +1,4817 @@
+{
+  "schema_version": "1.0",
+  "round": "POST_L0_TRAJECTORY_V01",
+  "data_generation": "20260921T171959Z_c30e629b",
+  "l0_source_plugin": "sol_elow_fived_long_viewer_v022",
+  "frozen_pine_v022_sha256": "751524402bcbfff6f188e92e29b318a665f9ea834ca501abc2ddade5a7493508",
+  "frozen_pine_v022_sha256_matches_freeze": true,
+  "raw_l0_count": 832,
+  "dedup_gap_bars": 5,
+  "cluster_count": 401,
+  "dedup_sensitivity": [
+    {
+      "gap_bars": 1,
+      "cluster_count": 711,
+      "singleton_clusters": 610,
+      "max_l0_count": 4,
+      "l0_covered": 832
+    },
+    {
+      "gap_bars": 2,
+      "cluster_count": 626,
+      "singleton_clusters": 478,
+      "max_l0_count": 6,
+      "l0_covered": 832
+    },
+    {
+      "gap_bars": 3,
+      "cluster_count": 540,
+      "singleton_clusters": 363,
+      "max_l0_count": 8,
+      "l0_covered": 832
+    },
+    {
+      "gap_bars": 5,
+      "cluster_count": 401,
+      "singleton_clusters": 210,
+      "max_l0_count": 13,
+      "l0_covered": 832
+    },
+    {
+      "gap_bars": 10,
+      "cluster_count": 283,
+      "singleton_clusters": 104,
+      "max_l0_count": 16,
+      "l0_covered": 832
+    },
+    {
+      "gap_bars": 20,
+      "cluster_count": 198,
+      "singleton_clusters": 42,
+      "max_l0_count": 19,
+      "l0_covered": 832
+    }
+  ],
+  "prior_authoritative_dedup_rule_found": false,
+  "prior_dedup_rule_note": "检索 docs/、reports/、quant_core/ 未发现既有权威 L0 去重口径；P8.1 sol_btc_post_l0_divergence 只做单事件窗口诊断，未定义去重规则。本轮首次采用观察性间隔去重，已在此显式登记。",
+  "observation_bars": 40,
+  "right_censored_clusters": [
+    "L0C0401_20260916T210000Z"
+  ],
+  "rows_per_bar_trajectory": 16038,
+  "per_bar_field_count": 280,
+  "candidate_leg_rows": 10679,
+  "candidate_leg_variant_counts": {
+    "swing3": 4397,
+    "swing5": 2564,
+    "sma20_cross": 2095,
+    "swing8": 1623
+  },
+  "selected_case_count": 24,
+  "selection_meta": {
+    "strata_definition": [
+      [
+        "S06_no_valid_up_outcome",
+        "L0 后从未形成有效向上价格成果"
+      ],
+      [
+        "S07_brief_up_then_fail",
+        "L0 后短暂上涨随后失败"
+      ],
+      [
+        "S02_chop_then_up",
+        "L0 后震荡后上涨"
+      ],
+      [
+        "S01_direct_steady_up",
+        "L0 后直接稳定上涨"
+      ],
+      [
+        "S03_up_normal_pullback_recover",
+        "上涨后正常回调再恢复"
+      ],
+      [
+        "S04_deep_pullback_recover",
+        "上涨后深度回调但最终恢复"
+      ],
+      [
+        "S05_up_then_damage_break",
+        "上涨后逐步受损并破坏"
+      ],
+      [
+        "S09_other_mixed",
+        "其他混合路径"
+      ]
+    ],
+    "strata_note": "以下阈值只用于抽样分层（sampling stratum），无治理状态，不是 FORMAL 阈值、不是信号条件、不定义进攻/回调/恢复。",
+    "quota": {
+      "S01_direct_steady_up": 3,
+      "S02_chop_then_up": 2,
+      "S03_up_normal_pullback_recover": 4,
+      "S04_deep_pullback_recover": 3,
+      "S05_up_then_damage_break": 4,
+      "S06_no_valid_up_outcome": 4,
+      "S07_brief_up_then_fail": 2,
+      "S09_other_mixed": 2
+    },
+    "overlay_quota": {
+      "S08_multi_attack_multi_pullback": 4,
+      "S09_btc_strong_sol_weak": 3,
+      "S10_sol_strong_btc_weak": 3,
+      "S11_recent": 2,
+      "S12_early": 2
+    },
+    "selected_count": 24,
+    "strata_distribution": {
+      "S01_direct_steady_up": 3,
+      "S02_chop_then_up": 1,
+      "S03_up_normal_pullback_recover": 4,
+      "S04_deep_pullback_recover": 3,
+      "S05_up_then_damage_break": 4,
+      "S06_no_valid_up_outcome": 5,
+      "S07_brief_up_then_fail": 2,
+      "S09_other_mixed": 2
+    },
+    "overlay_distribution": {
+      "S08_multi_attack_multi_pullback": 16,
+      "S12_early": 9,
+      "S11_recent": 8,
+      "S10_sol_strong_btc_weak": 4,
+      "S09_btc_strong_sol_weak": 3
+    }
+  },
+  "btc_alignment_cross_check": {
+    "rows_total": 17845,
+    "rows_btc_master_matched": 17845,
+    "rows_missing_btc_master": 0,
+    "btc_close_max_abs_diff": 0.0,
+    "btc_sma20_max_abs_diff": 5.238689482212067e-10,
+    "btc_above_sma_mismatch_rows": 0,
+    "rows_plugin_btc_sma20_3_na": 3,
+    "rows_plugin_btc_sma20_3_na_raw": 3,
+    "btc_sma_up_compared_rows": 17842,
+    "btc_sma_up_mismatch_rows": 0,
+    "missing_btc_dependency_rows": 0,
+    "forward_fill_used": false,
+    "nearest_neighbour_used": false,
+    "join_method": "exact equality on open_time_utc (row alignment), inner; no ffill"
+  },
+  "sol_3h_rows": 17845,
+  "sol_3h_range": [
+    "2020-08-11T06:00:00Z",
+    "2026-09-21T12:00:00Z"
+  ],
+  "all_rows_is_closed": true,
+  "future_bar_used": false,
+  "final_state_formula_created": false,
+  "existing_pine_or_plugin_modified": false,
+  "statistics_or_backtest_run": false,
+  "cases": [
+    {
+      "event_id": "L0C0001_20200817T150000Z",
+      "first_l0_time": "2020-08-17T15:00:00Z",
+      "last_l0_time": "2020-08-17T15:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2020-08-17T15:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S05_up_then_damage_break",
+      "markers_present": {
+        "L0": [
+          "2020-08-17T15:00:00Z"
+        ],
+        "EL": [
+          "2020-08-18T00:00:00Z",
+          "2020-08-18T06:00:00Z",
+          "2020-08-18T12:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2020-08-17T18:00:00Z",
+      "first_close_above_l0_high_bar": 7,
+      "first_close_above_sma20_bar": 7,
+      "max_gain_close": 0.08571428571428563,
+      "bar_of_max_gain_close": 9,
+      "time_of_max_gain_close": "2020-08-18T18:00:00Z",
+      "final_return_close": -0.037092176116566455,
+      "max_drawdown_from_running_high": 0.26046047665264743,
+      "bar_of_max_drawdown": 36,
+      "time_of_max_drawdown": "2020-08-22T03:00:00Z",
+      "retracement_ratio_of_peak_gain": 3.038705560947556,
+      "first_pullback_bar": 2,
+      "first_pullback_time": "2020-08-17T21:00:00Z",
+      "recovered_new_close_high_after_drawdown": false,
+      "bar_of_recovery_new_close_high": null,
+      "time_of_recovery_new_close_high": null,
+      "n_up_legs_variant": 5,
+      "n_down_legs_variant": 5,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0001_20200817T150000Z",
+        "first_l0_time": "2020-08-17T15:00:00Z",
+        "last_l0_time": "2020-08-17T15:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2020-08-17T15:00:00Z",
+        "first_l0_setup_score": 62,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.08571428571428563,
+        "bar_of_max_gain_close": 9,
+        "min_return_close": -0.10991447576813429,
+        "bar_of_min_return_close": 37,
+        "final_return_close": -0.037092176116566455,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 7,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 7,
+        "max_drawdown_from_running_high": 0.26046047665264743,
+        "bar_of_max_drawdown": 36,
+        "retracement_ratio_of_peak_gain": 3.038705560947556,
+        "recovered_new_close_high_after_drawdown": false,
+        "bar_of_recovery_new_close_high": null,
+        "bars_peak_to_trough": 27,
+        "n_up_legs": 0,
+        "n_legs_variant": 10,
+        "n_up_legs_variant": 5,
+        "n_down_legs_variant": 5,
+        "longest_up_leg_bars_variant": 8,
+        "largest_up_leg_gain_variant": 0.16842471714534368,
+        "btc_window_return": -0.06030783514192406,
+        "sol_window_return": -0.037092176116566455,
+        "sol_minus_btc_window_return": 0.023215659025357605,
+        "btc_above_sma_share": 0.275,
+        "btc_up_and_rising_share": 0.175,
+        "btc_velocity5_mean": -0.0008175926505946731,
+        "btc_missing_rows": 0,
+        "stratum": "S05_up_then_damage_break",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S10_sol_strong_btc_weak",
+          "S12_early"
+        ],
+        "selection_reasons": [
+          "stratum:S05_up_then_damage_break"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [],
+        "T": [],
+        "W": [],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "COOLING"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "COOLING"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 5,
+      "recovery_dim_changes_to_stronger": {},
+      "recovery_dim_changes_all": {},
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 28,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S10_sol_strong_btc_weak",
+        "S12_early"
+      ],
+      "selection_reasons": [
+        "stratum:S05_up_then_damage_break"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 10,
+        "n_up_legs_variant": 5,
+        "n_down_legs_variant": 5
+      }
+    },
+    {
+      "event_id": "L0C0002_20200903T150000Z",
+      "first_l0_time": "2020-09-03T15:00:00Z",
+      "last_l0_time": "2020-09-04T12:00:00Z",
+      "l0_count": 3,
+      "cluster_low_time": "2020-09-04T12:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S06_no_valid_up_outcome",
+      "markers_present": {
+        "L0": [
+          "2020-09-03T15:00:00Z",
+          "2020-09-04T06:00:00Z",
+          "2020-09-04T12:00:00Z"
+        ],
+        "EL": [
+          "2020-09-03T15:00:00Z",
+          "2020-09-05T09:00:00Z"
+        ],
+        "EL+": [
+          "2020-09-05T09:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2020-09-03T18:00:00Z",
+      "first_close_above_l0_high_bar": null,
+      "first_close_above_sma20_bar": 25,
+      "max_gain_close": 0.0036706196416653736,
+      "bar_of_max_gain_close": 1,
+      "time_of_max_gain_close": "2020-09-03T18:00:00Z",
+      "final_return_close": -0.35589609322860516,
+      "max_drawdown_from_running_high": 0.482029702970297,
+      "bar_of_max_drawdown": 14,
+      "time_of_max_drawdown": "2020-09-05T09:00:00Z",
+      "retracement_ratio_of_peak_gain": 131.32107110711104,
+      "first_pullback_bar": 2,
+      "first_pullback_time": "2020-09-03T21:00:00Z",
+      "recovered_new_close_high_after_drawdown": false,
+      "bar_of_recovery_new_close_high": null,
+      "time_of_recovery_new_close_high": null,
+      "n_up_legs_variant": 9,
+      "n_down_legs_variant": 10,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0002_20200903T150000Z",
+        "first_l0_time": "2020-09-03T15:00:00Z",
+        "last_l0_time": "2020-09-04T12:00:00Z",
+        "l0_count": 3,
+        "cluster_low_time": "2020-09-04T12:00:00Z",
+        "first_l0_setup_score": 75,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.0036706196416653736,
+        "bar_of_max_gain_close": 1,
+        "min_return_close": -0.3847476769854715,
+        "bar_of_min_return_close": 19,
+        "final_return_close": -0.35589609322860516,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": null,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 25,
+        "max_drawdown_from_running_high": 0.482029702970297,
+        "bar_of_max_drawdown": 14,
+        "retracement_ratio_of_peak_gain": 131.32107110711104,
+        "recovered_new_close_high_after_drawdown": false,
+        "bar_of_recovery_new_close_high": null,
+        "bars_peak_to_trough": 13,
+        "n_up_legs": 0,
+        "n_legs_variant": 19,
+        "n_up_legs_variant": 9,
+        "n_down_legs_variant": 10,
+        "longest_up_leg_bars_variant": 4,
+        "largest_up_leg_gain_variant": 0.21766483175365248,
+        "btc_window_return": -0.05558085495340903,
+        "sol_window_return": -0.35589609322860516,
+        "sol_minus_btc_window_return": -0.30031523827519613,
+        "btc_above_sma_share": 0.075,
+        "btc_up_and_rising_share": 0.025,
+        "btc_velocity5_mean": -0.002488849016678555,
+        "btc_missing_rows": 0,
+        "stratum": "S06_no_valid_up_outcome",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S12_early"
+        ],
+        "selection_reasons": [
+          "stratum:S06_no_valid_up_outcome"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [],
+        "T": [],
+        "W": [],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 4,
+      "recovery_dim_changes_to_stronger": {},
+      "recovery_dim_changes_all": {},
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 34,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S12_early"
+      ],
+      "selection_reasons": [
+        "stratum:S06_no_valid_up_outcome"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 19,
+        "n_up_legs_variant": 9,
+        "n_down_legs_variant": 10
+      }
+    },
+    {
+      "event_id": "L0C0003_20200913T120000Z",
+      "first_l0_time": "2020-09-13T12:00:00Z",
+      "last_l0_time": "2020-09-13T12:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2020-09-13T12:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S07_brief_up_then_fail",
+      "markers_present": {
+        "L0": [
+          "2020-09-13T12:00:00Z",
+          "2020-09-16T00:00:00Z",
+          "2020-09-16T18:00:00Z",
+          "2020-09-17T03:00:00Z",
+          "2020-09-17T09:00:00Z"
+        ],
+        "F5": [
+          "2020-09-17T18:00:00Z"
+        ],
+        "EL": [
+          "2020-09-13T12:00:00Z",
+          "2020-09-16T00:00:00Z",
+          "2020-09-17T09:00:00Z"
+        ],
+        "EL+": [
+          "2020-09-16T00:00:00Z",
+          "2020-09-17T09:00:00Z"
+        ],
+        "FL5": [
+          "2020-09-17T18:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2020-09-13T15:00:00Z",
+      "first_close_above_l0_high_bar": 2,
+      "first_close_above_sma20_bar": 6,
+      "max_gain_close": 0.06387672139413225,
+      "bar_of_max_gain_close": 7,
+      "time_of_max_gain_close": "2020-09-14T09:00:00Z",
+      "final_return_close": -0.03422304856143432,
+      "max_drawdown_from_running_high": 0.33320148051874665,
+      "bar_of_max_drawdown": 31,
+      "time_of_max_drawdown": "2020-09-17T09:00:00Z",
+      "retracement_ratio_of_peak_gain": 5.216320957721457,
+      "first_pullback_bar": 4,
+      "first_pullback_time": "2020-09-14T00:00:00Z",
+      "recovered_new_close_high_after_drawdown": false,
+      "bar_of_recovery_new_close_high": null,
+      "time_of_recovery_new_close_high": null,
+      "n_up_legs_variant": 8,
+      "n_down_legs_variant": 7,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0003_20200913T120000Z",
+        "first_l0_time": "2020-09-13T12:00:00Z",
+        "last_l0_time": "2020-09-13T12:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2020-09-13T12:00:00Z",
+        "first_l0_setup_score": 60,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.06387672139413225,
+        "bar_of_max_gain_close": 7,
+        "min_return_close": -0.2273973466107836,
+        "bar_of_min_return_close": 24,
+        "final_return_close": -0.03422304856143432,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 2,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 6,
+        "max_drawdown_from_running_high": 0.33320148051874665,
+        "bar_of_max_drawdown": 31,
+        "retracement_ratio_of_peak_gain": 5.216320957721457,
+        "recovered_new_close_high_after_drawdown": false,
+        "bar_of_recovery_new_close_high": null,
+        "bars_peak_to_trough": 24,
+        "n_up_legs": 0,
+        "n_legs_variant": 15,
+        "n_up_legs_variant": 8,
+        "n_down_legs_variant": 7,
+        "longest_up_leg_bars_variant": 6,
+        "largest_up_leg_gain_variant": 0.11328539431804785,
+        "btc_window_return": 0.06319553540123857,
+        "sol_window_return": -0.03422304856143432,
+        "sol_minus_btc_window_return": -0.09741858396267289,
+        "btc_above_sma_share": 0.8,
+        "btc_up_and_rising_share": 0.8,
+        "btc_velocity5_mean": 0.0011493925781820738,
+        "btc_missing_rows": 0,
+        "stratum": "S07_brief_up_then_fail",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S09_btc_strong_sol_weak",
+          "S12_early"
+        ],
+        "selection_reasons": [
+          "stratum:S07_brief_up_then_fail"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2020-09-17T18:00:00Z",
+            "leg_index": 13,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.6
+          }
+        ],
+        "T": [],
+        "W": [],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP-ATTEMPT",
+          "WEAK"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP-ATTEMPT",
+          "WEAK"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 1,
+      "recovery_dim_changes_to_stronger": {},
+      "recovery_dim_changes_all": {},
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 25,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S09_btc_strong_sol_weak",
+        "S12_early"
+      ],
+      "selection_reasons": [
+        "stratum:S07_brief_up_then_fail"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 15,
+        "n_up_legs_variant": 8,
+        "n_down_legs_variant": 7
+      }
+    },
+    {
+      "event_id": "L0C0004_20200916T000000Z",
+      "first_l0_time": "2020-09-16T00:00:00Z",
+      "last_l0_time": "2020-09-16T00:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2020-09-16T00:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S04_deep_pullback_recover",
+      "markers_present": {
+        "L0": [
+          "2020-09-16T00:00:00Z",
+          "2020-09-16T18:00:00Z",
+          "2020-09-17T03:00:00Z",
+          "2020-09-17T09:00:00Z"
+        ],
+        "F5": [
+          "2020-09-17T18:00:00Z"
+        ],
+        "T": [
+          "2020-09-18T12:00:00Z"
+        ],
+        "X": [
+          "2020-09-20T00:00:00Z"
+        ],
+        "EL": [
+          "2020-09-16T00:00:00Z",
+          "2020-09-17T09:00:00Z"
+        ],
+        "EL+": [
+          "2020-09-16T00:00:00Z",
+          "2020-09-17T09:00:00Z"
+        ],
+        "FL5": [
+          "2020-09-17T18:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 14,
+      "first_close_above_l0_close_time": "2020-09-17T18:00:00Z",
+      "first_close_above_l0_high_bar": 18,
+      "first_close_above_sma20_bar": 14,
+      "max_gain_close": 0.15657832551714113,
+      "bar_of_max_gain_close": 24,
+      "time_of_max_gain_close": "2020-09-19T00:00:00Z",
+      "final_return_close": 0.040753262805831136,
+      "max_drawdown_from_running_high": 0.1943467722664118,
+      "bar_of_max_drawdown": 11,
+      "time_of_max_drawdown": "2020-09-17T09:00:00Z",
+      "retracement_ratio_of_peak_gain": 1.241211206113812,
+      "first_pullback_bar": 1,
+      "first_pullback_time": "2020-09-16T03:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 14,
+      "time_of_recovery_new_close_high": "2020-09-17T18:00:00Z",
+      "n_up_legs_variant": 7,
+      "n_down_legs_variant": 7,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0004_20200916T000000Z",
+        "first_l0_time": "2020-09-16T00:00:00Z",
+        "last_l0_time": "2020-09-16T00:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2020-09-16T00:00:00Z",
+        "first_l0_setup_score": 65,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.15657832551714113,
+        "bar_of_max_gain_close": 24,
+        "min_return_close": -0.10869960373723053,
+        "bar_of_min_return_close": 4,
+        "final_return_close": 0.040753262805831136,
+        "first_positive_close_bar": 14,
+        "first_close_above_l0_high_bar": 18,
+        "first_new_close_high_bar": 14,
+        "first_close_above_sma20_bar": 14,
+        "max_drawdown_from_running_high": 0.1943467722664118,
+        "bar_of_max_drawdown": 11,
+        "retracement_ratio_of_peak_gain": 1.241211206113812,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 14,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 14,
+        "n_up_legs_variant": 7,
+        "n_down_legs_variant": 7,
+        "longest_up_leg_bars_variant": 6,
+        "largest_up_leg_gain_variant": 0.11328539431804785,
+        "btc_window_return": 0.017136257369857466,
+        "sol_window_return": 0.040753262805831136,
+        "sol_minus_btc_window_return": 0.02361700543597367,
+        "btc_above_sma_share": 0.725,
+        "btc_up_and_rising_share": 0.7,
+        "btc_velocity5_mean": 0.00019805775980432307,
+        "btc_missing_rows": 0,
+        "stratum": "S04_deep_pullback_recover",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S12_early"
+        ],
+        "selection_reasons": [
+          "stratum:S04_deep_pullback_recover"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2020-09-17T18:00:00Z",
+            "leg_index": 6,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.6
+          }
+        ],
+        "T": [
+          {
+            "marker": "T",
+            "time": "2020-09-18T12:00:00Z",
+            "leg_index": 9,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.3333333333333333
+          }
+        ],
+        "W": [],
+        "X": [
+          {
+            "marker": "X",
+            "time": "2020-09-20T00:00:00Z",
+            "leg_index": 13,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.4444444444444444
+          }
+        ],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "ACTIVE",
+          "EXPANDING"
+        ],
+        "velocity": [
+          "UP",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "POSITIVE",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 1,
+      "recovery_dim_changes_to_stronger": {
+        "direction_control": [
+          "WEAK",
+          "UP-ATTEMPT"
+        ]
+      },
+      "recovery_dim_changes_all": {
+        "direction_control": [
+          "WEAK",
+          "UP-ATTEMPT"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "ACTIVE"
+        ]
+      },
+      "x_preceding_3bar_weakness": [
+        {
+          "bar": 29,
+          "time": "2020-09-19T15:00:00Z",
+          "weak_dim_count": 4
+        },
+        {
+          "bar": 30,
+          "time": "2020-09-19T18:00:00Z",
+          "weak_dim_count": 4
+        },
+        {
+          "bar": 31,
+          "time": "2020-09-19T21:00:00Z",
+          "weak_dim_count": 4
+        }
+      ],
+      "x_preceding_bars_with_2plus_weak_dims": 3,
+      "bars_with_2plus_weak_dims": 24,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S12_early"
+      ],
+      "selection_reasons": [
+        "stratum:S04_deep_pullback_recover"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 14,
+        "n_up_legs_variant": 7,
+        "n_down_legs_variant": 7
+      }
+    },
+    {
+      "event_id": "L0C0006_20200921T090000Z",
+      "first_l0_time": "2020-09-21T09:00:00Z",
+      "last_l0_time": "2020-09-21T12:00:00Z",
+      "l0_count": 2,
+      "cluster_low_time": "2020-09-21T09:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S03_up_normal_pullback_recover",
+      "markers_present": {
+        "L0": [
+          "2020-09-21T09:00:00Z",
+          "2020-09-21T12:00:00Z"
+        ],
+        "EL": [
+          "2020-09-21T09:00:00Z"
+        ],
+        "EL+": [
+          "2020-09-21T09:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2020-09-21T12:00:00Z",
+      "first_close_above_l0_high_bar": 2,
+      "first_close_above_sma20_bar": 5,
+      "max_gain_close": 0.2216538138505002,
+      "bar_of_max_gain_close": 35,
+      "time_of_max_gain_close": "2020-09-25T18:00:00Z",
+      "final_return_close": 0.19378483622203535,
+      "max_drawdown_from_running_high": 0.12618122977346277,
+      "bar_of_max_drawdown": 19,
+      "time_of_max_drawdown": "2020-09-23T18:00:00Z",
+      "retracement_ratio_of_peak_gain": 0.5692716384233694,
+      "first_pullback_bar": 4,
+      "first_pullback_time": "2020-09-21T21:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 23,
+      "time_of_recovery_new_close_high": "2020-09-24T06:00:00Z",
+      "n_up_legs_variant": 8,
+      "n_down_legs_variant": 8,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0006_20200921T090000Z",
+        "first_l0_time": "2020-09-21T09:00:00Z",
+        "last_l0_time": "2020-09-21T12:00:00Z",
+        "l0_count": 2,
+        "cluster_low_time": "2020-09-21T09:00:00Z",
+        "first_l0_setup_score": 90,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.2216538138505002,
+        "bar_of_max_gain_close": 35,
+        "min_return_close": 0.0,
+        "bar_of_min_return_close": 0,
+        "final_return_close": 0.19378483622203535,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 2,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 5,
+        "max_drawdown_from_running_high": 0.12618122977346277,
+        "bar_of_max_drawdown": 19,
+        "retracement_ratio_of_peak_gain": 0.5692716384233694,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 23,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 16,
+        "n_up_legs_variant": 8,
+        "n_down_legs_variant": 8,
+        "longest_up_leg_bars_variant": 9,
+        "largest_up_leg_gain_variant": 0.1256744684652491,
+        "btc_window_return": 0.005126700869743539,
+        "sol_window_return": 0.19378483622203535,
+        "sol_minus_btc_window_return": 0.1886581353522918,
+        "btc_above_sma_share": 0.35,
+        "btc_up_and_rising_share": 0.35,
+        "btc_velocity5_mean": -0.00046397468557974524,
+        "btc_missing_rows": 0,
+        "stratum": "S03_up_normal_pullback_recover",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S10_sol_strong_btc_weak",
+          "S12_early"
+        ],
+        "selection_reasons": [
+          "stratum:S03_up_normal_pullback_recover"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [],
+        "T": [],
+        "W": [],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "ACTIVE",
+          "COOLING"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "ACTIVE",
+          "COOLING"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 5,
+      "recovery_dim_changes_to_stronger": {
+        "direction_control": [
+          "WEAK",
+          "UP"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "recovery_dim_changes_all": {
+        "direction_control": [
+          "WEAK",
+          "UP"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 17,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S10_sol_strong_btc_weak",
+        "S12_early"
+      ],
+      "selection_reasons": [
+        "stratum:S03_up_normal_pullback_recover"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 16,
+        "n_up_legs_variant": 8,
+        "n_down_legs_variant": 8
+      }
+    },
+    {
+      "event_id": "L0C0009_20201005T030000Z",
+      "first_l0_time": "2020-10-05T03:00:00Z",
+      "last_l0_time": "2020-10-05T03:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2020-10-05T03:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S09_other_mixed",
+      "markers_present": {
+        "L0": [
+          "2020-10-05T03:00:00Z",
+          "2020-10-06T15:00:00Z",
+          "2020-10-06T21:00:00Z",
+          "2020-10-07T00:00:00Z",
+          "2020-10-07T09:00:00Z",
+          "2020-10-07T21:00:00Z",
+          "2020-10-08T06:00:00Z"
+        ],
+        "F5": [
+          "2020-10-05T12:00:00Z",
+          "2020-10-08T12:00:00Z"
+        ],
+        "T": [
+          "2020-10-05T21:00:00Z",
+          "2020-10-09T06:00:00Z"
+        ],
+        "X": [
+          "2020-10-06T06:00:00Z"
+        ],
+        "EL": [
+          "2020-10-06T09:00:00Z",
+          "2020-10-06T18:00:00Z",
+          "2020-10-06T21:00:00Z",
+          "2020-10-07T00:00:00Z",
+          "2020-10-07T03:00:00Z",
+          "2020-10-08T06:00:00Z"
+        ],
+        "EL+": [
+          "2020-10-06T09:00:00Z",
+          "2020-10-06T18:00:00Z",
+          "2020-10-06T21:00:00Z",
+          "2020-10-07T00:00:00Z",
+          "2020-10-07T03:00:00Z",
+          "2020-10-08T06:00:00Z"
+        ],
+        "FL5": [
+          "2020-10-08T12:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 2,
+      "first_close_above_l0_close_time": "2020-10-05T09:00:00Z",
+      "first_close_above_l0_high_bar": 3,
+      "first_close_above_sma20_bar": 3,
+      "max_gain_close": 0.050251455272640966,
+      "bar_of_max_gain_close": 6,
+      "time_of_max_gain_close": "2020-10-05T21:00:00Z",
+      "final_return_close": 0.02324476299845557,
+      "max_drawdown_from_running_high": 0.2499813641446141,
+      "bar_of_max_drawdown": 25,
+      "time_of_max_drawdown": "2020-10-08T06:00:00Z",
+      "retracement_ratio_of_peak_gain": 4.974609447394743,
+      "first_pullback_bar": 1,
+      "first_pullback_time": "2020-10-05T06:00:00Z",
+      "recovered_new_close_high_after_drawdown": false,
+      "bar_of_recovery_new_close_high": null,
+      "time_of_recovery_new_close_high": null,
+      "n_up_legs_variant": 7,
+      "n_down_legs_variant": 6,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0009_20201005T030000Z",
+        "first_l0_time": "2020-10-05T03:00:00Z",
+        "last_l0_time": "2020-10-05T03:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2020-10-05T03:00:00Z",
+        "first_l0_setup_score": 60,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.050251455272640966,
+        "bar_of_max_gain_close": 6,
+        "min_return_close": -0.1803746089573517,
+        "bar_of_min_return_close": 25,
+        "final_return_close": 0.02324476299845557,
+        "first_positive_close_bar": 2,
+        "first_close_above_l0_high_bar": 3,
+        "first_new_close_high_bar": 2,
+        "first_close_above_sma20_bar": 3,
+        "max_drawdown_from_running_high": 0.2499813641446141,
+        "bar_of_max_drawdown": 25,
+        "retracement_ratio_of_peak_gain": 4.974609447394743,
+        "recovered_new_close_high_after_drawdown": false,
+        "bar_of_recovery_new_close_high": null,
+        "bars_peak_to_trough": 19,
+        "n_up_legs": 0,
+        "n_legs_variant": 13,
+        "n_up_legs_variant": 7,
+        "n_down_legs_variant": 6,
+        "longest_up_leg_bars_variant": 7,
+        "largest_up_leg_gain_variant": 0.12054304763745294,
+        "btc_window_return": 0.0662348354080402,
+        "sol_window_return": 0.02324476299845557,
+        "sol_minus_btc_window_return": -0.042990072409584634,
+        "btc_above_sma_share": 0.625,
+        "btc_up_and_rising_share": 0.6,
+        "btc_velocity5_mean": 0.0010808190258823614,
+        "btc_missing_rows": 0,
+        "stratum": "S09_other_mixed",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S12_early"
+        ],
+        "selection_reasons": [
+          "stratum:S09_other_mixed"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2020-10-05T12:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.5
+          },
+          {
+            "marker": "F5",
+            "time": "2020-10-08T12:00:00Z",
+            "leg_index": 9,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.6666666666666666
+          }
+        ],
+        "T": [
+          {
+            "marker": "T",
+            "time": "2020-10-05T21:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "末端",
+            "relative_ratio": 1.0
+          },
+          {
+            "marker": "T",
+            "time": "2020-10-09T06:00:00Z",
+            "leg_index": 11,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.6666666666666666
+          }
+        ],
+        "W": [],
+        "X": [
+          {
+            "marker": "X",
+            "time": "2020-10-06T06:00:00Z",
+            "leg_index": 2,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "末端",
+            "relative_ratio": 0.75
+          }
+        ],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 4,
+      "recovery_dim_changes_to_stronger": {},
+      "recovery_dim_changes_all": {},
+      "x_preceding_3bar_weakness": [
+        {
+          "bar": 6,
+          "time": "2020-10-05T21:00:00Z",
+          "weak_dim_count": 0
+        },
+        {
+          "bar": 7,
+          "time": "2020-10-06T00:00:00Z",
+          "weak_dim_count": 0
+        },
+        {
+          "bar": 8,
+          "time": "2020-10-06T03:00:00Z",
+          "weak_dim_count": 3
+        }
+      ],
+      "x_preceding_bars_with_2plus_weak_dims": 1,
+      "bars_with_2plus_weak_dims": 15,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S12_early"
+      ],
+      "selection_reasons": [
+        "stratum:S09_other_mixed"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 13,
+        "n_up_legs_variant": 7,
+        "n_down_legs_variant": 6
+      }
+    },
+    {
+      "event_id": "L0C0012_20201020T000000Z",
+      "first_l0_time": "2020-10-20T00:00:00Z",
+      "last_l0_time": "2020-10-20T00:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2020-10-20T00:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S06_no_valid_up_outcome",
+      "markers_present": {
+        "L0": [
+          "2020-10-20T00:00:00Z",
+          "2020-10-22T00:00:00Z"
+        ],
+        "F5": [
+          "2020-10-22T03:00:00Z"
+        ],
+        "T": [
+          "2020-10-22T15:00:00Z"
+        ],
+        "X": [
+          "2020-10-23T06:00:00Z"
+        ],
+        "EL": [
+          "2020-10-20T00:00:00Z",
+          "2020-10-20T06:00:00Z",
+          "2020-10-20T09:00:00Z"
+        ],
+        "EL+": [
+          "2020-10-20T00:00:00Z",
+          "2020-10-20T06:00:00Z",
+          "2020-10-20T09:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 19,
+      "first_close_above_l0_close_time": "2020-10-22T09:00:00Z",
+      "first_close_above_l0_high_bar": null,
+      "first_close_above_sma20_bar": 17,
+      "max_gain_close": 0.0009676795045479025,
+      "bar_of_max_gain_close": 19,
+      "time_of_max_gain_close": "2020-10-22T09:00:00Z",
+      "final_return_close": -0.07383394619701966,
+      "max_drawdown_from_running_high": 0.1272511848341232,
+      "bar_of_max_drawdown": 15,
+      "time_of_max_drawdown": "2020-10-21T21:00:00Z",
+      "retracement_ratio_of_peak_gain": 131.5013744076089,
+      "first_pullback_bar": 1,
+      "first_pullback_time": "2020-10-20T03:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 19,
+      "time_of_recovery_new_close_high": "2020-10-22T09:00:00Z",
+      "n_up_legs_variant": 5,
+      "n_down_legs_variant": 6,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0012_20201020T000000Z",
+        "first_l0_time": "2020-10-20T00:00:00Z",
+        "last_l0_time": "2020-10-20T00:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2020-10-20T00:00:00Z",
+        "first_l0_setup_score": 75,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.0009676795045479025,
+        "bar_of_max_gain_close": 19,
+        "min_return_close": -0.10465453841687644,
+        "bar_of_min_return_close": 3,
+        "final_return_close": -0.07383394619701966,
+        "first_positive_close_bar": 19,
+        "first_close_above_l0_high_bar": null,
+        "first_new_close_high_bar": 19,
+        "first_close_above_sma20_bar": 17,
+        "max_drawdown_from_running_high": 0.1272511848341232,
+        "bar_of_max_drawdown": 15,
+        "retracement_ratio_of_peak_gain": 131.5013744076089,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 19,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 11,
+        "n_up_legs_variant": 5,
+        "n_down_legs_variant": 6,
+        "longest_up_leg_bars_variant": 9,
+        "largest_up_leg_gain_variant": 0.07920792079207928,
+        "btc_window_return": 0.11875306635267213,
+        "sol_window_return": -0.07383394619701966,
+        "sol_minus_btc_window_return": -0.1925870125496918,
+        "btc_above_sma_share": 0.975,
+        "btc_up_and_rising_share": 0.975,
+        "btc_velocity5_mean": 0.0028583857333823242,
+        "btc_missing_rows": 0,
+        "stratum": "S06_no_valid_up_outcome",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S09_btc_strong_sol_weak",
+          "S12_early"
+        ],
+        "selection_reasons": [
+          "overlay:S09_btc_strong_sol_weak"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2020-10-22T03:00:00Z",
+            "leg_index": 8,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.3333333333333333
+          }
+        ],
+        "T": [
+          {
+            "marker": "T",
+            "time": "2020-10-22T15:00:00Z",
+            "leg_index": 8,
+            "leg_kind": "UP_LEG",
+            "relative_position": "末端",
+            "relative_ratio": 1.0
+          }
+        ],
+        "W": [],
+        "X": [
+          {
+            "marker": "X",
+            "time": "2020-10-23T06:00:00Z",
+            "leg_index": 9,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.625
+          }
+        ],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP-ATTEMPT",
+          "WEAK"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP-ATTEMPT",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "ACTIVE",
+          "EXPANDING"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 3,
+      "recovery_dim_changes_to_stronger": {
+        "direction_control": [
+          "WEAK",
+          "UP-ATTEMPT"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ]
+      },
+      "recovery_dim_changes_all": {
+        "direction_control": [
+          "WEAK",
+          "UP-ATTEMPT"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "ACTIVE"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ]
+      },
+      "x_preceding_3bar_weakness": [
+        {
+          "bar": 23,
+          "time": "2020-10-22T21:00:00Z",
+          "weak_dim_count": 4
+        },
+        {
+          "bar": 24,
+          "time": "2020-10-23T00:00:00Z",
+          "weak_dim_count": 4
+        },
+        {
+          "bar": 25,
+          "time": "2020-10-23T03:00:00Z",
+          "weak_dim_count": 4
+        }
+      ],
+      "x_preceding_bars_with_2plus_weak_dims": 3,
+      "bars_with_2plus_weak_dims": 29,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S09_btc_strong_sol_weak",
+        "S12_early"
+      ],
+      "selection_reasons": [
+        "overlay:S09_btc_strong_sol_weak"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 11,
+        "n_up_legs_variant": 5,
+        "n_down_legs_variant": 6
+      }
+    },
+    {
+      "event_id": "L0C0019_20201102T120000Z",
+      "first_l0_time": "2020-11-02T12:00:00Z",
+      "last_l0_time": "2020-11-02T12:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2020-11-02T12:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S02_chop_then_up",
+      "markers_present": {
+        "L0": [
+          "2020-11-02T12:00:00Z",
+          "2020-11-03T06:00:00Z",
+          "2020-11-03T12:00:00Z",
+          "2020-11-03T18:00:00Z",
+          "2020-11-04T06:00:00Z",
+          "2020-11-04T15:00:00Z"
+        ],
+        "EL": [
+          "2020-11-04T00:00:00Z",
+          "2020-11-04T15:00:00Z"
+        ],
+        "EL+": [
+          "2020-11-04T00:00:00Z",
+          "2020-11-04T15:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 28,
+      "first_close_above_l0_close_time": "2020-11-06T00:00:00Z",
+      "first_close_above_l0_high_bar": 28,
+      "first_close_above_sma20_bar": 24,
+      "max_gain_close": 0.6080691642651297,
+      "bar_of_max_gain_close": 39,
+      "time_of_max_gain_close": "2020-11-07T09:00:00Z",
+      "final_return_close": 0.6080691642651297,
+      "max_drawdown_from_running_high": 0.19725796245517815,
+      "bar_of_max_drawdown": 36,
+      "time_of_max_drawdown": "2020-11-07T00:00:00Z",
+      "retracement_ratio_of_peak_gain": 0.32440053541207026,
+      "first_pullback_bar": 1,
+      "first_pullback_time": "2020-11-02T15:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 37,
+      "time_of_recovery_new_close_high": "2020-11-07T03:00:00Z",
+      "n_up_legs_variant": 4,
+      "n_down_legs_variant": 4,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0019_20201102T120000Z",
+        "first_l0_time": "2020-11-02T12:00:00Z",
+        "last_l0_time": "2020-11-02T12:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2020-11-02T12:00:00Z",
+        "first_l0_setup_score": 62,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.6080691642651297,
+        "bar_of_max_gain_close": 39,
+        "min_return_close": -0.1272702901950271,
+        "bar_of_min_return_close": 16,
+        "final_return_close": 0.6080691642651297,
+        "first_positive_close_bar": 28,
+        "first_close_above_l0_high_bar": 28,
+        "first_new_close_high_bar": 28,
+        "first_close_above_sma20_bar": 24,
+        "max_drawdown_from_running_high": 0.19725796245517815,
+        "bar_of_max_drawdown": 36,
+        "retracement_ratio_of_peak_gain": 0.32440053541207026,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 37,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 8,
+        "n_up_legs_variant": 4,
+        "n_down_legs_variant": 4,
+        "longest_up_leg_bars_variant": 10,
+        "largest_up_leg_gain_variant": 0.500535446562433,
+        "btc_window_return": 0.15199628770301632,
+        "sol_window_return": 0.6080691642651297,
+        "sol_minus_btc_window_return": 0.45607287656211337,
+        "btc_above_sma_share": 0.8,
+        "btc_up_and_rising_share": 0.675,
+        "btc_velocity5_mean": 0.003335563972395053,
+        "btc_missing_rows": 0,
+        "stratum": "S02_chop_then_up",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S12_early"
+        ],
+        "selection_reasons": [
+          "stratum:S02_chop_then_up"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [],
+        "T": [],
+        "W": [],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {},
+      "pullback_dim_changes_all": {},
+      "pullback_weak_dim_count_at_deepest": 0,
+      "recovery_dim_changes_to_stronger": {},
+      "recovery_dim_changes_all": {},
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 20,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S12_early"
+      ],
+      "selection_reasons": [
+        "stratum:S02_chop_then_up"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 8,
+        "n_up_legs_variant": 4,
+        "n_down_legs_variant": 4
+      }
+    },
+    {
+      "event_id": "L0C0032_20210325T000000Z",
+      "first_l0_time": "2021-03-25T00:00:00Z",
+      "last_l0_time": "2021-03-26T03:00:00Z",
+      "l0_count": 4,
+      "cluster_low_time": "2021-03-26T03:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S01_direct_steady_up",
+      "markers_present": {
+        "L0": [
+          "2021-03-25T00:00:00Z",
+          "2021-03-25T12:00:00Z",
+          "2021-03-25T15:00:00Z",
+          "2021-03-26T03:00:00Z"
+        ],
+        "F5": [
+          "2021-03-26T12:00:00Z"
+        ],
+        "T": [
+          "2021-03-27T03:00:00Z"
+        ],
+        "W": [
+          "2021-03-27T18:00:00Z"
+        ],
+        "EL": [
+          "2021-03-25T00:00:00Z",
+          "2021-03-25T12:00:00Z"
+        ],
+        "EL+": [
+          "2021-03-25T00:00:00Z",
+          "2021-03-25T12:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2021-03-25T03:00:00Z",
+      "first_close_above_l0_high_bar": 10,
+      "first_close_above_sma20_bar": 10,
+      "max_gain_close": 0.43740127121499106,
+      "bar_of_max_gain_close": 28,
+      "time_of_max_gain_close": "2021-03-28T12:00:00Z",
+      "final_return_close": 0.4187298331249578,
+      "max_drawdown_from_running_high": 0.10402755426748911,
+      "bar_of_max_drawdown": 9,
+      "time_of_max_drawdown": "2021-03-26T03:00:00Z",
+      "retracement_ratio_of_peak_gain": 0.2378309372044728,
+      "first_pullback_bar": 2,
+      "first_pullback_time": "2021-03-25T06:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 10,
+      "time_of_recovery_new_close_high": "2021-03-26T06:00:00Z",
+      "n_up_legs_variant": 6,
+      "n_down_legs_variant": 6,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0032_20210325T000000Z",
+        "first_l0_time": "2021-03-25T00:00:00Z",
+        "last_l0_time": "2021-03-26T03:00:00Z",
+        "l0_count": 4,
+        "cluster_low_time": "2021-03-26T03:00:00Z",
+        "first_l0_setup_score": 65,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.43740127121499106,
+        "bar_of_max_gain_close": 28,
+        "min_return_close": -0.07429645212730118,
+        "bar_of_min_return_close": 8,
+        "final_return_close": 0.4187298331249578,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 10,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 10,
+        "max_drawdown_from_running_high": 0.10402755426748911,
+        "bar_of_max_drawdown": 9,
+        "retracement_ratio_of_peak_gain": 0.2378309372044728,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 10,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 12,
+        "n_up_legs_variant": 6,
+        "n_down_legs_variant": 6,
+        "longest_up_leg_bars_variant": 10,
+        "largest_up_leg_gain_variant": 0.22000756502394525,
+        "btc_window_return": 0.10295783954835636,
+        "sol_window_return": 0.4187298331249578,
+        "sol_minus_btc_window_return": 0.31577199357660146,
+        "btc_above_sma_share": 0.65,
+        "btc_up_and_rising_share": 0.475,
+        "btc_velocity5_mean": 0.0011857714886807313,
+        "btc_missing_rows": 0,
+        "stratum": "S01_direct_steady_up",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S12_early"
+        ],
+        "selection_reasons": [
+          "stratum:S01_direct_steady_up"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2021-03-26T12:00:00Z",
+            "leg_index": 4,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "末端",
+            "relative_ratio": 1.0
+          }
+        ],
+        "T": [
+          {
+            "marker": "T",
+            "time": "2021-03-27T03:00:00Z",
+            "leg_index": 5,
+            "leg_kind": "UP_LEG",
+            "relative_position": "末端",
+            "relative_ratio": 0.8333333333333334
+          }
+        ],
+        "W": [
+          {
+            "marker": "W",
+            "time": "2021-03-27T18:00:00Z",
+            "leg_index": 7,
+            "leg_kind": "UP_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.2222222222222222
+          }
+        ],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "COOLING"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "COOLING"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 2,
+      "recovery_dim_changes_to_stronger": {
+        "direction_control": [
+          "WEAK",
+          "UP-ATTEMPT"
+        ],
+        "volume_drive": [
+          "COOLING",
+          "EXPANDING"
+        ]
+      },
+      "recovery_dim_changes_all": {
+        "direction_control": [
+          "WEAK",
+          "UP-ATTEMPT"
+        ],
+        "volume_drive": [
+          "COOLING",
+          "EXPANDING"
+        ]
+      },
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 16,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S12_early"
+      ],
+      "selection_reasons": [
+        "stratum:S01_direct_steady_up"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 12,
+        "n_up_legs_variant": 6,
+        "n_down_legs_variant": 6
+      }
+    },
+    {
+      "event_id": "L0C0082_20220214T180000Z",
+      "first_l0_time": "2022-02-14T18:00:00Z",
+      "last_l0_time": "2022-02-14T18:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2022-02-14T18:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S05_up_then_damage_break",
+      "markers_present": {
+        "L0": [
+          "2022-02-14T18:00:00Z",
+          "2022-02-17T18:00:00Z",
+          "2022-02-18T12:00:00Z",
+          "2022-02-18T18:00:00Z",
+          "2022-02-19T03:00:00Z"
+        ],
+        "F5": [
+          "2022-02-14T21:00:00Z"
+        ],
+        "T": [
+          "2022-02-15T00:00:00Z"
+        ],
+        "X": [
+          "2022-02-16T12:00:00Z",
+          "2022-02-17T03:00:00Z"
+        ],
+        "EL": [
+          "2022-02-17T18:00:00Z",
+          "2022-02-18T15:00:00Z"
+        ],
+        "EL+": [
+          "2022-02-17T18:00:00Z",
+          "2022-02-18T15:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2022-02-14T21:00:00Z",
+      "first_close_above_l0_high_bar": 2,
+      "first_close_above_sma20_bar": 1,
+      "max_gain_close": 0.11261071277941781,
+      "bar_of_max_gain_close": 9,
+      "time_of_max_gain_close": "2022-02-15T21:00:00Z",
+      "final_return_close": -0.03901307465204562,
+      "max_drawdown_from_running_high": 0.16233336484825567,
+      "bar_of_max_drawdown": 37,
+      "time_of_max_drawdown": "2022-02-19T09:00:00Z",
+      "retracement_ratio_of_peak_gain": 1.4415445994577332,
+      "first_pullback_bar": 3,
+      "first_pullback_time": "2022-02-15T03:00:00Z",
+      "recovered_new_close_high_after_drawdown": false,
+      "bar_of_recovery_new_close_high": null,
+      "time_of_recovery_new_close_high": null,
+      "n_up_legs_variant": 3,
+      "n_down_legs_variant": 2,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0082_20220214T180000Z",
+        "first_l0_time": "2022-02-14T18:00:00Z",
+        "last_l0_time": "2022-02-14T18:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2022-02-14T18:00:00Z",
+        "first_l0_setup_score": 65,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.11261071277941781,
+        "bar_of_max_gain_close": 9,
+        "min_return_close": -0.05651623787431459,
+        "bar_of_min_return_close": 37,
+        "final_return_close": -0.03901307465204562,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 2,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 1,
+        "max_drawdown_from_running_high": 0.16233336484825567,
+        "bar_of_max_drawdown": 37,
+        "retracement_ratio_of_peak_gain": 1.4415445994577332,
+        "recovered_new_close_high_after_drawdown": false,
+        "bar_of_recovery_new_close_high": null,
+        "bars_peak_to_trough": 28,
+        "n_up_legs": 0,
+        "n_legs_variant": 5,
+        "n_up_legs_variant": 3,
+        "n_down_legs_variant": 2,
+        "longest_up_leg_bars_variant": 10,
+        "largest_up_leg_gain_variant": 0.11261071277941781,
+        "btc_window_return": -0.048317824587190805,
+        "sol_window_return": -0.03901307465204562,
+        "sol_minus_btc_window_return": 0.009304749935145185,
+        "btc_above_sma_share": 0.45,
+        "btc_up_and_rising_share": 0.45,
+        "btc_velocity5_mean": -0.0013321264924969398,
+        "btc_missing_rows": 0,
+        "stratum": "S05_up_then_damage_break",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback"
+        ],
+        "selection_reasons": [
+          "stratum:S05_up_then_damage_break"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2022-02-14T21:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.1111111111111111
+          }
+        ],
+        "T": [
+          {
+            "marker": "T",
+            "time": "2022-02-15T00:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.2222222222222222
+          }
+        ],
+        "W": [],
+        "X": [
+          {
+            "marker": "X",
+            "time": "2022-02-16T12:00:00Z",
+            "leg_index": 2,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "末端",
+            "relative_ratio": 0.8333333333333334
+          },
+          {
+            "marker": "X",
+            "time": "2022-02-17T03:00:00Z",
+            "leg_index": 4,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.14285714285714285
+          }
+        ],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "ACTIVE",
+          "COOLING"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "ACTIVE",
+          "COOLING"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 4,
+      "recovery_dim_changes_to_stronger": {},
+      "recovery_dim_changes_all": {},
+      "x_preceding_3bar_weakness": [
+        {
+          "bar": 11,
+          "time": "2022-02-16T03:00:00Z",
+          "weak_dim_count": 1
+        },
+        {
+          "bar": 12,
+          "time": "2022-02-16T06:00:00Z",
+          "weak_dim_count": 1
+        },
+        {
+          "bar": 13,
+          "time": "2022-02-16T09:00:00Z",
+          "weak_dim_count": 1
+        }
+      ],
+      "x_preceding_bars_with_2plus_weak_dims": 0,
+      "bars_with_2plus_weak_dims": 27,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback"
+      ],
+      "selection_reasons": [
+        "stratum:S05_up_then_damage_break"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 5,
+        "n_up_legs_variant": 3,
+        "n_down_legs_variant": 2
+      }
+    },
+    {
+      "event_id": "L0C0121_20220704T030000Z",
+      "first_l0_time": "2022-07-04T03:00:00Z",
+      "last_l0_time": "2022-07-04T03:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2022-07-04T03:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S03_up_normal_pullback_recover",
+      "markers_present": {
+        "L0": [
+          "2022-07-04T03:00:00Z",
+          "2022-07-05T15:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2022-07-04T06:00:00Z",
+      "first_close_above_l0_high_bar": 1,
+      "first_close_above_sma20_bar": 0,
+      "max_gain_close": 0.18071189534529974,
+      "bar_of_max_gain_close": 37,
+      "time_of_max_gain_close": "2022-07-08T18:00:00Z",
+      "final_return_close": 0.17188926072406474,
+      "max_drawdown_from_running_high": 0.10705596107055963,
+      "bar_of_max_drawdown": 11,
+      "time_of_max_drawdown": "2022-07-05T12:00:00Z",
+      "retracement_ratio_of_peak_gain": 0.5924123637019013,
+      "first_pullback_bar": 3,
+      "first_pullback_time": "2022-07-04T12:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 22,
+      "time_of_recovery_new_close_high": "2022-07-06T21:00:00Z",
+      "n_up_legs_variant": 3,
+      "n_down_legs_variant": 3,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0121_20220704T030000Z",
+        "first_l0_time": "2022-07-04T03:00:00Z",
+        "last_l0_time": "2022-07-04T03:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2022-07-04T03:00:00Z",
+        "first_l0_setup_score": 65,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.18071189534529974,
+        "bar_of_max_gain_close": 37,
+        "min_return_close": 0.0,
+        "bar_of_min_return_close": 0,
+        "final_return_close": 0.17188926072406474,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 1,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 0,
+        "max_drawdown_from_running_high": 0.10705596107055963,
+        "bar_of_max_drawdown": 11,
+        "retracement_ratio_of_peak_gain": 0.5924123637019013,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 22,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 6,
+        "n_up_legs_variant": 3,
+        "n_down_legs_variant": 3,
+        "longest_up_leg_bars_variant": 21,
+        "largest_up_leg_gain_variant": 0.14404761904761898,
+        "btc_window_return": 0.12798012665391312,
+        "sol_window_return": 0.17188926072406474,
+        "sol_minus_btc_window_return": 0.04390913407015162,
+        "btc_above_sma_share": 0.925,
+        "btc_up_and_rising_share": 0.9,
+        "btc_velocity5_mean": 0.003042279557632736,
+        "btc_missing_rows": 0,
+        "stratum": "S03_up_normal_pullback_recover",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback"
+        ],
+        "selection_reasons": [
+          "stratum:S03_up_normal_pullback_recover"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [],
+        "T": [],
+        "W": [],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "ACTIVE"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "ACTIVE"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 4,
+      "recovery_dim_changes_to_stronger": {
+        "direction_control": [
+          "WEAK",
+          "UP"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "recovery_dim_changes_all": {
+        "direction_control": [
+          "WEAK",
+          "UP"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 11,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback"
+      ],
+      "selection_reasons": [
+        "stratum:S03_up_normal_pullback_recover"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 6,
+        "n_up_legs_variant": 3,
+        "n_down_legs_variant": 3
+      }
+    },
+    {
+      "event_id": "L0C0157_20221222T180000Z",
+      "first_l0_time": "2022-12-22T18:00:00Z",
+      "last_l0_time": "2022-12-23T06:00:00Z",
+      "l0_count": 3,
+      "cluster_low_time": "2022-12-22T21:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S06_no_valid_up_outcome",
+      "markers_present": {
+        "L0": [
+          "2022-12-22T18:00:00Z",
+          "2022-12-22T21:00:00Z",
+          "2022-12-23T06:00:00Z",
+          "2022-12-24T03:00:00Z",
+          "2022-12-24T21:00:00Z",
+          "2022-12-26T00:00:00Z",
+          "2022-12-26T15:00:00Z"
+        ],
+        "EL": [
+          "2022-12-22T21:00:00Z",
+          "2022-12-24T03:00:00Z",
+          "2022-12-26T15:00:00Z",
+          "2022-12-27T12:00:00Z",
+          "2022-12-27T15:00:00Z"
+        ],
+        "EL+": [
+          "2022-12-22T21:00:00Z",
+          "2022-12-24T03:00:00Z",
+          "2022-12-26T15:00:00Z",
+          "2022-12-27T12:00:00Z",
+          "2022-12-27T15:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 2,
+      "first_close_above_l0_close_time": "2022-12-23T00:00:00Z",
+      "first_close_above_l0_high_bar": null,
+      "first_close_above_sma20_bar": null,
+      "max_gain_close": 0.008375209380234505,
+      "bar_of_max_gain_close": 2,
+      "time_of_max_gain_close": "2022-12-23T00:00:00Z",
+      "final_return_close": -0.09547738693467323,
+      "max_drawdown_from_running_high": 0.11560693641618486,
+      "bar_of_max_drawdown": 38,
+      "time_of_max_drawdown": "2022-12-27T12:00:00Z",
+      "retracement_ratio_of_peak_gain": 13.803468208092474,
+      "first_pullback_bar": 1,
+      "first_pullback_time": "2022-12-22T21:00:00Z",
+      "recovered_new_close_high_after_drawdown": false,
+      "bar_of_recovery_new_close_high": null,
+      "time_of_recovery_new_close_high": null,
+      "n_up_legs_variant": 1,
+      "n_down_legs_variant": 1,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0157_20221222T180000Z",
+        "first_l0_time": "2022-12-22T18:00:00Z",
+        "last_l0_time": "2022-12-23T06:00:00Z",
+        "l0_count": 3,
+        "cluster_low_time": "2022-12-22T21:00:00Z",
+        "first_l0_setup_score": 77,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.008375209380234505,
+        "bar_of_max_gain_close": 2,
+        "min_return_close": -0.09547738693467323,
+        "bar_of_min_return_close": 39,
+        "final_return_close": -0.09547738693467323,
+        "first_positive_close_bar": 2,
+        "first_close_above_l0_high_bar": null,
+        "first_new_close_high_bar": 2,
+        "first_close_above_sma20_bar": null,
+        "max_drawdown_from_running_high": 0.11560693641618486,
+        "bar_of_max_drawdown": 38,
+        "retracement_ratio_of_peak_gain": 13.803468208092474,
+        "recovered_new_close_high_after_drawdown": false,
+        "bar_of_recovery_new_close_high": null,
+        "bars_peak_to_trough": 36,
+        "n_up_legs": 0,
+        "n_legs_variant": 2,
+        "n_up_legs_variant": 1,
+        "n_down_legs_variant": 1,
+        "longest_up_leg_bars_variant": 4,
+        "largest_up_leg_gain_variant": 0.0008375209380233617,
+        "btc_window_return": -0.006061465597070881,
+        "sol_window_return": -0.09547738693467323,
+        "sol_minus_btc_window_return": -0.08941592133760234,
+        "btc_above_sma_share": 0.775,
+        "btc_up_and_rising_share": 0.5,
+        "btc_velocity5_mean": 7.280825592413053e-05,
+        "btc_missing_rows": 0,
+        "stratum": "S06_no_valid_up_outcome",
+        "overlay_flags": [
+          "S09_btc_strong_sol_weak"
+        ],
+        "selection_reasons": [
+          "stratum:S06_no_valid_up_outcome"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [],
+        "T": [],
+        "W": [],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {},
+      "pullback_dim_changes_all": {},
+      "pullback_weak_dim_count_at_deepest": 4,
+      "recovery_dim_changes_to_stronger": {},
+      "recovery_dim_changes_all": {},
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 36,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S09_btc_strong_sol_weak"
+      ],
+      "selection_reasons": [
+        "stratum:S06_no_valid_up_outcome"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 2,
+        "n_up_legs_variant": 1,
+        "n_down_legs_variant": 1
+      }
+    },
+    {
+      "event_id": "L0C0171_20230308T180000Z",
+      "first_l0_time": "2023-03-08T18:00:00Z",
+      "last_l0_time": "2023-03-08T18:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2023-03-08T18:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S04_deep_pullback_recover",
+      "markers_present": {
+        "L0": [
+          "2023-03-08T18:00:00Z",
+          "2023-03-09T12:00:00Z",
+          "2023-03-09T15:00:00Z",
+          "2023-03-10T06:00:00Z",
+          "2023-03-10T09:00:00Z",
+          "2023-03-10T18:00:00Z"
+        ],
+        "EL": [
+          "2023-03-08T21:00:00Z",
+          "2023-03-09T18:00:00Z",
+          "2023-03-10T09:00:00Z"
+        ],
+        "EL+": [
+          "2023-03-08T21:00:00Z",
+          "2023-03-09T18:00:00Z",
+          "2023-03-10T09:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 33,
+      "first_close_above_l0_close_time": "2023-03-12T21:00:00Z",
+      "first_close_above_l0_high_bar": 33,
+      "first_close_above_sma20_bar": 17,
+      "max_gain_close": 0.08306878306878307,
+      "bar_of_max_gain_close": 39,
+      "time_of_max_gain_close": "2023-03-13T15:00:00Z",
+      "final_return_close": 0.08306878306878307,
+      "max_drawdown_from_running_high": 0.15611814345991565,
+      "bar_of_max_drawdown": 13,
+      "time_of_max_drawdown": "2023-03-10T09:00:00Z",
+      "retracement_ratio_of_peak_gain": 1.8793840199951628,
+      "first_pullback_bar": 1,
+      "first_pullback_time": "2023-03-08T21:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 33,
+      "time_of_recovery_new_close_high": "2023-03-12T21:00:00Z",
+      "n_up_legs_variant": 3,
+      "n_down_legs_variant": 3,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0171_20230308T180000Z",
+        "first_l0_time": "2023-03-08T18:00:00Z",
+        "last_l0_time": "2023-03-08T18:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2023-03-08T18:00:00Z",
+        "first_l0_setup_score": 77,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.08306878306878307,
+        "bar_of_max_gain_close": 39,
+        "min_return_close": -0.1158730158730158,
+        "bar_of_min_return_close": 13,
+        "final_return_close": 0.08306878306878307,
+        "first_positive_close_bar": 33,
+        "first_close_above_l0_high_bar": 33,
+        "first_new_close_high_bar": 33,
+        "first_close_above_sma20_bar": 17,
+        "max_drawdown_from_running_high": 0.15611814345991565,
+        "bar_of_max_drawdown": 13,
+        "retracement_ratio_of_peak_gain": 1.8793840199951628,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 33,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 6,
+        "n_up_legs_variant": 3,
+        "n_down_legs_variant": 3,
+        "longest_up_leg_bars_variant": 15,
+        "largest_up_leg_gain_variant": 0.12786697247706424,
+        "btc_window_return": 0.09084730915793937,
+        "sol_window_return": 0.08306878306878307,
+        "sol_minus_btc_window_return": -0.007778526089156301,
+        "btc_above_sma_share": 0.4,
+        "btc_up_and_rising_share": 0.25,
+        "btc_velocity5_mean": 0.0009353110733008558,
+        "btc_missing_rows": 0,
+        "stratum": "S04_deep_pullback_recover",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback"
+        ],
+        "selection_reasons": [
+          "stratum:S04_deep_pullback_recover"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [],
+        "T": [],
+        "W": [],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "ACTIVE"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "POSITIVE",
+          "WEAK"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "ACTIVE"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "POSITIVE",
+          "WEAK"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 3,
+      "recovery_dim_changes_to_stronger": {
+        "direction_control": [
+          "WEAK",
+          "UP"
+        ],
+        "volume_drive": [
+          "ACTIVE",
+          "EXPANDING"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ]
+      },
+      "recovery_dim_changes_all": {
+        "direction_control": [
+          "WEAK",
+          "UP"
+        ],
+        "volume_drive": [
+          "ACTIVE",
+          "EXPANDING"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ]
+      },
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 19,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback"
+      ],
+      "selection_reasons": [
+        "stratum:S04_deep_pullback_recover"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 6,
+        "n_up_legs_variant": 3,
+        "n_down_legs_variant": 3
+      }
+    },
+    {
+      "event_id": "L0C0184_20230427T120000Z",
+      "first_l0_time": "2023-04-27T12:00:00Z",
+      "last_l0_time": "2023-04-27T21:00:00Z",
+      "l0_count": 2,
+      "cluster_low_time": "2023-04-27T12:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S05_up_then_damage_break",
+      "markers_present": {
+        "L0": [
+          "2023-04-27T12:00:00Z",
+          "2023-04-27T21:00:00Z",
+          "2023-05-01T15:00:00Z",
+          "2023-05-02T00:00:00Z",
+          "2023-05-02T09:00:00Z"
+        ],
+        "EL": [
+          "2023-05-01T00:00:00Z",
+          "2023-05-01T15:00:00Z"
+        ],
+        "EL+": [
+          "2023-05-01T00:00:00Z",
+          "2023-05-01T15:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2023-04-27T15:00:00Z",
+      "first_close_above_l0_high_bar": 1,
+      "first_close_above_sma20_bar": 0,
+      "max_gain_close": 0.08249312557286892,
+      "bar_of_max_gain_close": 16,
+      "time_of_max_gain_close": "2023-04-29T12:00:00Z",
+      "final_return_close": 0.007332722273143855,
+      "max_drawdown_from_running_high": 0.10212588578574404,
+      "bar_of_max_drawdown": 34,
+      "time_of_max_drawdown": "2023-05-01T18:00:00Z",
+      "retracement_ratio_of_peak_gain": 1.2379926821360752,
+      "first_pullback_bar": 4,
+      "first_pullback_time": "2023-04-28T00:00:00Z",
+      "recovered_new_close_high_after_drawdown": false,
+      "bar_of_recovery_new_close_high": null,
+      "time_of_recovery_new_close_high": null,
+      "n_up_legs_variant": 2,
+      "n_down_legs_variant": 1,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0184_20230427T120000Z",
+        "first_l0_time": "2023-04-27T12:00:00Z",
+        "last_l0_time": "2023-04-27T21:00:00Z",
+        "l0_count": 2,
+        "cluster_low_time": "2023-04-27T12:00:00Z",
+        "first_l0_setup_score": 65,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.08249312557286892,
+        "bar_of_max_gain_close": 16,
+        "min_return_close": -0.008249312557286892,
+        "bar_of_min_return_close": 34,
+        "final_return_close": 0.007332722273143855,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 1,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 0,
+        "max_drawdown_from_running_high": 0.10212588578574404,
+        "bar_of_max_drawdown": 34,
+        "retracement_ratio_of_peak_gain": 1.2379926821360752,
+        "recovered_new_close_high_after_drawdown": false,
+        "bar_of_recovery_new_close_high": null,
+        "bars_peak_to_trough": 18,
+        "n_up_legs": 0,
+        "n_legs_variant": 3,
+        "n_up_legs_variant": 2,
+        "n_down_legs_variant": 1,
+        "longest_up_leg_bars_variant": 26,
+        "largest_up_leg_gain_variant": 0.07745187901008266,
+        "btc_window_return": -0.030706613461335297,
+        "sol_window_return": 0.007332722273143855,
+        "sol_minus_btc_window_return": 0.03803933573447915,
+        "btc_above_sma_share": 0.475,
+        "btc_up_and_rising_share": 0.4,
+        "btc_velocity5_mean": -0.000742702064705535,
+        "btc_missing_rows": 0,
+        "stratum": "S05_up_then_damage_break",
+        "overlay_flags": [],
+        "selection_reasons": [
+          "stratum:S05_up_then_damage_break"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [],
+        "T": [],
+        "W": [],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "velocity": [
+          "UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "POSITIVE",
+          "WEAK"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "velocity": [
+          "UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "POSITIVE",
+          "WEAK"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 5,
+      "recovery_dim_changes_to_stronger": {},
+      "recovery_dim_changes_all": {},
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 26,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [],
+      "selection_reasons": [
+        "stratum:S05_up_then_damage_break"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 3,
+        "n_up_legs_variant": 2,
+        "n_down_legs_variant": 1
+      }
+    },
+    {
+      "event_id": "L0C0255_20240624T090000Z",
+      "first_l0_time": "2024-06-24T09:00:00Z",
+      "last_l0_time": "2024-06-24T18:00:00Z",
+      "l0_count": 3,
+      "cluster_low_time": "2024-06-24T09:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S03_up_normal_pullback_recover",
+      "markers_present": {
+        "L0": [
+          "2024-06-24T09:00:00Z",
+          "2024-06-24T15:00:00Z",
+          "2024-06-24T18:00:00Z"
+        ],
+        "EL": [
+          "2024-06-24T09:00:00Z"
+        ],
+        "EL+": [
+          "2024-06-24T09:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2024-06-24T12:00:00Z",
+      "first_close_above_l0_high_bar": 1,
+      "first_close_above_sma20_bar": 4,
+      "max_gain_close": 0.17816951286692384,
+      "bar_of_max_gain_close": 28,
+      "time_of_max_gain_close": "2024-06-27T21:00:00Z",
+      "final_return_close": 0.11946171401589689,
+      "max_drawdown_from_running_high": 0.08392302096422193,
+      "bar_of_max_drawdown": 25,
+      "time_of_max_drawdown": "2024-06-27T12:00:00Z",
+      "retracement_ratio_of_peak_gain": 0.4710290757033425,
+      "first_pullback_bar": 2,
+      "first_pullback_time": "2024-06-24T15:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 26,
+      "time_of_recovery_new_close_high": "2024-06-27T15:00:00Z",
+      "n_up_legs_variant": 2,
+      "n_down_legs_variant": 1,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0255_20240624T090000Z",
+        "first_l0_time": "2024-06-24T09:00:00Z",
+        "last_l0_time": "2024-06-24T18:00:00Z",
+        "l0_count": 3,
+        "cluster_low_time": "2024-06-24T09:00:00Z",
+        "first_l0_setup_score": 95,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.17816951286692384,
+        "bar_of_max_gain_close": 28,
+        "min_return_close": 0.0,
+        "bar_of_min_return_close": 0,
+        "final_return_close": 0.11946171401589689,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 1,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 4,
+        "max_drawdown_from_running_high": 0.08392302096422193,
+        "bar_of_max_drawdown": 25,
+        "retracement_ratio_of_peak_gain": 0.4710290757033425,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 26,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 3,
+        "n_up_legs_variant": 2,
+        "n_down_legs_variant": 1,
+        "longest_up_leg_bars_variant": 26,
+        "largest_up_leg_gain_variant": 0.16518454395215243,
+        "btc_window_return": -0.005056455211491895,
+        "sol_window_return": 0.11946171401589689,
+        "sol_minus_btc_window_return": 0.12451816922738879,
+        "btc_above_sma_share": 0.275,
+        "btc_up_and_rising_share": 0.15,
+        "btc_velocity5_mean": -0.0009468221146456138,
+        "btc_missing_rows": 0,
+        "stratum": "S03_up_normal_pullback_recover",
+        "overlay_flags": [
+          "S10_sol_strong_btc_weak"
+        ],
+        "selection_reasons": [
+          "stratum:S03_up_normal_pullback_recover"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [],
+        "T": [],
+        "W": [],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {},
+      "pullback_dim_changes_all": {},
+      "pullback_weak_dim_count_at_deepest": 0,
+      "recovery_dim_changes_to_stronger": {},
+      "recovery_dim_changes_all": {},
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 23,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S10_sol_strong_btc_weak"
+      ],
+      "selection_reasons": [
+        "stratum:S03_up_normal_pullback_recover"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 3,
+        "n_up_legs_variant": 2,
+        "n_down_legs_variant": 1
+      }
+    },
+    {
+      "event_id": "L0C0258_20240712T090000Z",
+      "first_l0_time": "2024-07-12T09:00:00Z",
+      "last_l0_time": "2024-07-12T09:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2024-07-12T09:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S01_direct_steady_up",
+      "markers_present": {
+        "L0": [
+          "2024-07-12T09:00:00Z"
+        ],
+        "F5": [
+          "2024-07-12T21:00:00Z"
+        ],
+        "T": [
+          "2024-07-14T03:00:00Z"
+        ],
+        "W": [
+          "2024-07-14T15:00:00Z"
+        ],
+        "X": [
+          "2024-07-13T00:00:00Z",
+          "2024-07-13T06:00:00Z"
+        ],
+        "R": [
+          "2024-07-13T09:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2024-07-12T12:00:00Z",
+      "first_close_above_l0_high_bar": 1,
+      "first_close_above_sma20_bar": 4,
+      "max_gain_close": 0.1952082565425728,
+      "bar_of_max_gain_close": 34,
+      "time_of_max_gain_close": "2024-07-16T15:00:00Z",
+      "final_return_close": 0.19388131220051585,
+      "max_drawdown_from_running_high": 0.04774684808388469,
+      "bar_of_max_drawdown": 31,
+      "time_of_max_drawdown": "2024-07-16T06:00:00Z",
+      "retracement_ratio_of_peak_gain": 0.2445944087076646,
+      "first_pullback_bar": 3,
+      "first_pullback_time": "2024-07-12T18:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 34,
+      "time_of_recovery_new_close_high": "2024-07-16T15:00:00Z",
+      "n_up_legs_variant": 1,
+      "n_down_legs_variant": 1,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0258_20240712T090000Z",
+        "first_l0_time": "2024-07-12T09:00:00Z",
+        "last_l0_time": "2024-07-12T09:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2024-07-12T09:00:00Z",
+        "first_l0_setup_score": 77,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.1952082565425728,
+        "bar_of_max_gain_close": 34,
+        "min_return_close": 0.0,
+        "bar_of_min_return_close": 0,
+        "final_return_close": 0.19388131220051585,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 1,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 4,
+        "max_drawdown_from_running_high": 0.04774684808388469,
+        "bar_of_max_drawdown": 31,
+        "retracement_ratio_of_peak_gain": 0.2445944087076646,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 34,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 2,
+        "n_up_legs_variant": 1,
+        "n_down_legs_variant": 1,
+        "longest_up_leg_bars_variant": 38,
+        "largest_up_leg_gain_variant": 0.18717287136011773,
+        "btc_window_return": 0.1394335035908616,
+        "sol_window_return": 0.19388131220051585,
+        "sol_minus_btc_window_return": 0.05444780860965426,
+        "btc_above_sma_share": 0.925,
+        "btc_up_and_rising_share": 0.85,
+        "btc_velocity5_mean": 0.003230681793358678,
+        "btc_missing_rows": 0,
+        "stratum": "S01_direct_steady_up",
+        "overlay_flags": [],
+        "selection_reasons": [
+          "stratum:S01_direct_steady_up"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2024-07-12T21:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.10810810810810811
+          }
+        ],
+        "T": [
+          {
+            "marker": "T",
+            "time": "2024-07-14T03:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.3783783783783784
+          }
+        ],
+        "W": [
+          {
+            "marker": "W",
+            "time": "2024-07-14T15:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.4864864864864865
+          }
+        ],
+        "X": [
+          {
+            "marker": "X",
+            "time": "2024-07-13T00:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.13513513513513514
+          },
+          {
+            "marker": "X",
+            "time": "2024-07-13T06:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.1891891891891892
+          }
+        ],
+        "R": [
+          {
+            "marker": "R",
+            "time": "2024-07-13T09:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.21621621621621623
+          }
+        ]
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "velocity": [
+          "FAST-UP",
+          "UP"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "POSITIVE"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "velocity": [
+          "FAST-UP",
+          "UP"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "POSITIVE"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 1,
+      "recovery_dim_changes_to_stronger": {
+        "velocity": [
+          "UP",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "POSITIVE",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "recovery_dim_changes_all": {
+        "velocity": [
+          "UP",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "POSITIVE",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "x_preceding_3bar_weakness": [
+        {
+          "bar": 2,
+          "time": "2024-07-12T15:00:00Z",
+          "weak_dim_count": 1
+        },
+        {
+          "bar": 3,
+          "time": "2024-07-12T18:00:00Z",
+          "weak_dim_count": 1
+        },
+        {
+          "bar": 4,
+          "time": "2024-07-12T21:00:00Z",
+          "weak_dim_count": 0
+        }
+      ],
+      "x_preceding_bars_with_2plus_weak_dims": 0,
+      "bars_with_2plus_weak_dims": 5,
+      "max_weak_dim_count": 4,
+      "overlay_flags": [],
+      "selection_reasons": [
+        "stratum:S01_direct_steady_up"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 2,
+        "n_up_legs_variant": 1,
+        "n_down_legs_variant": 1
+      }
+    },
+    {
+      "event_id": "L0C0287_20250202T030000Z",
+      "first_l0_time": "2025-02-02T03:00:00Z",
+      "last_l0_time": "2025-02-03T12:00:00Z",
+      "l0_count": 6,
+      "cluster_low_time": "2025-02-03T00:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S06_no_valid_up_outcome",
+      "markers_present": {
+        "L0": [
+          "2025-02-02T03:00:00Z",
+          "2025-02-02T15:00:00Z",
+          "2025-02-02T18:00:00Z",
+          "2025-02-02T21:00:00Z",
+          "2025-02-03T00:00:00Z",
+          "2025-02-03T12:00:00Z"
+        ],
+        "F5": [
+          "2025-02-03T18:00:00Z"
+        ],
+        "X": [
+          "2025-02-04T03:00:00Z",
+          "2025-02-05T06:00:00Z",
+          "2025-02-05T12:00:00Z"
+        ],
+        "EL": [
+          "2025-02-02T03:00:00Z",
+          "2025-02-02T15:00:00Z",
+          "2025-02-02T18:00:00Z",
+          "2025-02-02T21:00:00Z",
+          "2025-02-03T00:00:00Z",
+          "2025-02-06T15:00:00Z"
+        ],
+        "EL+": [
+          "2025-02-02T03:00:00Z",
+          "2025-02-02T15:00:00Z",
+          "2025-02-02T18:00:00Z",
+          "2025-02-02T21:00:00Z",
+          "2025-02-03T00:00:00Z",
+          "2025-02-06T15:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2025-02-02T06:00:00Z",
+      "first_close_above_l0_high_bar": 1,
+      "first_close_above_sma20_bar": 13,
+      "max_gain_close": 0.01879504451457925,
+      "bar_of_max_gain_close": 14,
+      "time_of_max_gain_close": "2025-02-03T21:00:00Z",
+      "final_return_close": -0.08196335201846539,
+      "max_drawdown_from_running_high": 0.18490198804393163,
+      "bar_of_max_drawdown": 7,
+      "time_of_max_drawdown": "2025-02-03T00:00:00Z",
+      "retracement_ratio_of_peak_gain": 9.837805273645603,
+      "first_pullback_bar": 2,
+      "first_pullback_time": "2025-02-02T09:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 14,
+      "time_of_recovery_new_close_high": "2025-02-03T21:00:00Z",
+      "n_up_legs_variant": 5,
+      "n_down_legs_variant": 4,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0287_20250202T030000Z",
+        "first_l0_time": "2025-02-02T03:00:00Z",
+        "last_l0_time": "2025-02-03T12:00:00Z",
+        "l0_count": 6,
+        "cluster_low_time": "2025-02-03T00:00:00Z",
+        "first_l0_setup_score": 80,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.01879504451457925,
+        "bar_of_max_gain_close": 14,
+        "min_return_close": -0.11465448207640494,
+        "bar_of_min_return_close": 7,
+        "final_return_close": -0.08196335201846539,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 1,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 13,
+        "max_drawdown_from_running_high": 0.18490198804393163,
+        "bar_of_max_drawdown": 7,
+        "retracement_ratio_of_peak_gain": 9.837805273645603,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 14,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 9,
+        "n_up_legs_variant": 5,
+        "n_down_legs_variant": 4,
+        "longest_up_leg_bars_variant": 6,
+        "largest_up_leg_gain_variant": 0.07991587802313349,
+        "btc_window_return": -0.026767330746513496,
+        "sol_window_return": -0.08196335201846539,
+        "sol_minus_btc_window_return": -0.05519602127195189,
+        "btc_above_sma_share": 0.35,
+        "btc_up_and_rising_share": 0.05,
+        "btc_velocity5_mean": -0.0010533608097089146,
+        "btc_missing_rows": 0,
+        "stratum": "S06_no_valid_up_outcome",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S11_recent"
+        ],
+        "selection_reasons": [
+          "stratum:S06_no_valid_up_outcome"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2025-02-03T18:00:00Z",
+            "leg_index": 5,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.5
+          }
+        ],
+        "T": [],
+        "W": [],
+        "X": [
+          {
+            "marker": "X",
+            "time": "2025-02-04T03:00:00Z",
+            "leg_index": 6,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "末端",
+            "relative_ratio": 1.0
+          },
+          {
+            "marker": "X",
+            "time": "2025-02-05T06:00:00Z",
+            "leg_index": 8,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.23529411764705882
+          },
+          {
+            "marker": "X",
+            "time": "2025-02-05T12:00:00Z",
+            "leg_index": 8,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.35294117647058826
+          }
+        ],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP-ATTEMPT",
+          "WEAK"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP-ATTEMPT",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "ACTIVE",
+          "EXPANDING"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 4,
+      "recovery_dim_changes_to_stronger": {
+        "direction_control": [
+          "WEAK",
+          "UP-ATTEMPT"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "recovery_dim_changes_all": {
+        "direction_control": [
+          "WEAK",
+          "UP-ATTEMPT"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "ACTIVE"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "x_preceding_3bar_weakness": [
+        {
+          "bar": 13,
+          "time": "2025-02-03T18:00:00Z",
+          "weak_dim_count": 0
+        },
+        {
+          "bar": 14,
+          "time": "2025-02-03T21:00:00Z",
+          "weak_dim_count": 0
+        },
+        {
+          "bar": 15,
+          "time": "2025-02-04T00:00:00Z",
+          "weak_dim_count": 0
+        }
+      ],
+      "x_preceding_bars_with_2plus_weak_dims": 0,
+      "bars_with_2plus_weak_dims": 32,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S11_recent"
+      ],
+      "selection_reasons": [
+        "stratum:S06_no_valid_up_outcome"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 9,
+        "n_up_legs_variant": 5,
+        "n_down_legs_variant": 4
+      }
+    },
+    {
+      "event_id": "L0C0364_20260210T210000Z",
+      "first_l0_time": "2026-02-10T21:00:00Z",
+      "last_l0_time": "2026-02-10T21:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2026-02-10T21:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S04_deep_pullback_recover",
+      "markers_present": {
+        "L0": [
+          "2026-02-10T21:00:00Z",
+          "2026-02-12T03:00:00Z",
+          "2026-02-12T06:00:00Z"
+        ],
+        "EL": [
+          "2026-02-11T12:00:00Z",
+          "2026-02-11T15:00:00Z",
+          "2026-02-12T15:00:00Z"
+        ],
+        "EL+": [
+          "2026-02-11T12:00:00Z",
+          "2026-02-11T15:00:00Z",
+          "2026-02-12T15:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2026-02-11T00:00:00Z",
+      "first_close_above_l0_high_bar": 1,
+      "first_close_above_sma20_bar": 20,
+      "max_gain_close": 0.08061212194240275,
+      "bar_of_max_gain_close": 34,
+      "time_of_max_gain_close": "2026-02-15T03:00:00Z",
+      "final_return_close": 0.03482347270755515,
+      "max_drawdown_from_running_high": 0.09230951534542015,
+      "bar_of_max_drawdown": 15,
+      "time_of_max_drawdown": "2026-02-12T18:00:00Z",
+      "retracement_ratio_of_peak_gain": 1.1451071268335447,
+      "first_pullback_bar": 2,
+      "first_pullback_time": "2026-02-11T03:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 22,
+      "time_of_recovery_new_close_high": "2026-02-13T15:00:00Z",
+      "n_up_legs_variant": 3,
+      "n_down_legs_variant": 3,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0364_20260210T210000Z",
+        "first_l0_time": "2026-02-10T21:00:00Z",
+        "last_l0_time": "2026-02-10T21:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2026-02-10T21:00:00Z",
+        "first_l0_setup_score": 65,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.08061212194240275,
+        "bar_of_max_gain_close": 34,
+        "min_return_close": -0.07314134233040115,
+        "bar_of_min_return_close": 15,
+        "final_return_close": 0.03482347270755515,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 1,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 20,
+        "max_drawdown_from_running_high": 0.09230951534542015,
+        "bar_of_max_drawdown": 15,
+        "retracement_ratio_of_peak_gain": 1.1451071268335447,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 22,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 6,
+        "n_up_legs_variant": 3,
+        "n_down_legs_variant": 3,
+        "longest_up_leg_bars_variant": 21,
+        "largest_up_leg_gain_variant": 0.1657566302652107,
+        "btc_window_return": -0.00568394345893275,
+        "sol_window_return": 0.03482347270755515,
+        "sol_minus_btc_window_return": 0.0405074161664879,
+        "btc_above_sma_share": 0.475,
+        "btc_up_and_rising_share": 0.375,
+        "btc_velocity5_mean": 0.0001570406059736156,
+        "btc_missing_rows": 0,
+        "stratum": "S04_deep_pullback_recover",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S11_recent"
+        ],
+        "selection_reasons": [
+          "stratum:S04_deep_pullback_recover"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [],
+        "T": [],
+        "W": [],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "velocity": [
+          "UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "POSITIVE",
+          "WEAK"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "velocity": [
+          "UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "POSITIVE",
+          "WEAK"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 4,
+      "recovery_dim_changes_to_stronger": {
+        "direction_control": [
+          "WEAK",
+          "UP-ATTEMPT"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "recovery_dim_changes_all": {
+        "direction_control": [
+          "WEAK",
+          "UP-ATTEMPT"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "ACTIVE"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 22,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S11_recent"
+      ],
+      "selection_reasons": [
+        "stratum:S04_deep_pullback_recover"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 6,
+        "n_up_legs_variant": 3,
+        "n_down_legs_variant": 3
+      }
+    },
+    {
+      "event_id": "L0C0368_20260223T030000Z",
+      "first_l0_time": "2026-02-23T03:00:00Z",
+      "last_l0_time": "2026-02-23T03:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2026-02-23T03:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S05_up_then_damage_break",
+      "markers_present": {
+        "L0": [
+          "2026-02-23T03:00:00Z",
+          "2026-02-24T00:00:00Z",
+          "2026-02-24T12:00:00Z"
+        ],
+        "F5": [
+          "2026-02-25T00:00:00Z"
+        ],
+        "T": [
+          "2026-02-25T12:00:00Z"
+        ],
+        "W": [
+          "2026-02-26T03:00:00Z"
+        ],
+        "X": [
+          "2026-02-27T09:00:00Z"
+        ],
+        "EL": [
+          "2026-02-23T03:00:00Z"
+        ],
+        "EL+": [
+          "2026-02-23T03:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2026-02-23T06:00:00Z",
+      "first_close_above_l0_high_bar": 1,
+      "first_close_above_sma20_bar": 15,
+      "max_gain_close": 0.14823378291586398,
+      "bar_of_max_gain_close": 21,
+      "time_of_max_gain_close": "2026-02-25T18:00:00Z",
+      "final_return_close": 0.055234425176621915,
+      "max_drawdown_from_running_high": 0.12790445168295334,
+      "bar_of_max_drawdown": 38,
+      "time_of_max_drawdown": "2026-02-27T21:00:00Z",
+      "retracement_ratio_of_peak_gain": 0.8628562879998187,
+      "first_pullback_bar": 4,
+      "first_pullback_time": "2026-02-23T15:00:00Z",
+      "recovered_new_close_high_after_drawdown": false,
+      "bar_of_recovery_new_close_high": null,
+      "time_of_recovery_new_close_high": null,
+      "n_up_legs_variant": 3,
+      "n_down_legs_variant": 2,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0368_20260223T030000Z",
+        "first_l0_time": "2026-02-23T03:00:00Z",
+        "last_l0_time": "2026-02-23T03:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2026-02-23T03:00:00Z",
+        "first_l0_setup_score": 80,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.14823378291586398,
+        "bar_of_max_gain_close": 21,
+        "min_return_close": -0.015542710340398114,
+        "bar_of_min_return_close": 8,
+        "final_return_close": 0.055234425176621915,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 1,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 15,
+        "max_drawdown_from_running_high": 0.12790445168295334,
+        "bar_of_max_drawdown": 38,
+        "retracement_ratio_of_peak_gain": 0.8628562879998187,
+        "recovered_new_close_high_after_drawdown": false,
+        "bar_of_recovery_new_close_high": null,
+        "bars_peak_to_trough": 17,
+        "n_up_legs": 0,
+        "n_legs_variant": 5,
+        "n_up_legs_variant": 3,
+        "n_down_legs_variant": 2,
+        "longest_up_leg_bars_variant": 12,
+        "largest_up_leg_gain_variant": 0.14571948998178508,
+        "btc_window_return": 0.013680923423527336,
+        "sol_window_return": 0.055234425176621915,
+        "sol_minus_btc_window_return": 0.04155350175309458,
+        "btc_above_sma_share": 0.475,
+        "btc_up_and_rising_share": 0.35,
+        "btc_velocity5_mean": -0.00042155357114940123,
+        "btc_missing_rows": 0,
+        "stratum": "S05_up_then_damage_break",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S11_recent"
+        ],
+        "selection_reasons": [
+          "stratum:S05_up_then_damage_break"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2026-02-25T00:00:00Z",
+            "leg_index": 3,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.36363636363636365
+          }
+        ],
+        "T": [
+          {
+            "marker": "T",
+            "time": "2026-02-25T12:00:00Z",
+            "leg_index": 3,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.7272727272727273
+          }
+        ],
+        "W": [
+          {
+            "marker": "W",
+            "time": "2026-02-26T03:00:00Z",
+            "leg_index": 4,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.125
+          }
+        ],
+        "X": [
+          {
+            "marker": "X",
+            "time": "2026-02-27T09:00:00Z",
+            "leg_index": 4,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "末端",
+            "relative_ratio": 0.75
+          }
+        ],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 4,
+      "recovery_dim_changes_to_stronger": {},
+      "recovery_dim_changes_all": {},
+      "x_preceding_3bar_weakness": [
+        {
+          "bar": 31,
+          "time": "2026-02-27T00:00:00Z",
+          "weak_dim_count": 4
+        },
+        {
+          "bar": 32,
+          "time": "2026-02-27T03:00:00Z",
+          "weak_dim_count": 2
+        },
+        {
+          "bar": 33,
+          "time": "2026-02-27T06:00:00Z",
+          "weak_dim_count": 1
+        }
+      ],
+      "x_preceding_bars_with_2plus_weak_dims": 2,
+      "bars_with_2plus_weak_dims": 26,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S11_recent"
+      ],
+      "selection_reasons": [
+        "stratum:S05_up_then_damage_break"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 5,
+        "n_up_legs_variant": 3,
+        "n_down_legs_variant": 2
+      }
+    },
+    {
+      "event_id": "L0C0388_20260625T120000Z",
+      "first_l0_time": "2026-06-25T12:00:00Z",
+      "last_l0_time": "2026-06-25T15:00:00Z",
+      "l0_count": 2,
+      "cluster_low_time": "2026-06-25T12:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S03_up_normal_pullback_recover",
+      "markers_present": {
+        "L0": [
+          "2026-06-25T12:00:00Z",
+          "2026-06-25T15:00:00Z"
+        ],
+        "EL": [
+          "2026-06-25T12:00:00Z"
+        ],
+        "EL+": [
+          "2026-06-25T12:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2026-06-25T15:00:00Z",
+      "first_close_above_l0_high_bar": 6,
+      "first_close_above_sma20_bar": 5,
+      "max_gain_close": 0.13577456298975288,
+      "bar_of_max_gain_close": 34,
+      "time_of_max_gain_close": "2026-06-29T18:00:00Z",
+      "final_return_close": 0.10608800482218217,
+      "max_drawdown_from_running_high": 0.07080673244341258,
+      "bar_of_max_drawdown": 0,
+      "time_of_max_drawdown": "2026-06-25T12:00:00Z",
+      "retracement_ratio_of_peak_gain": 0.5215021936675759,
+      "first_pullback_bar": 2,
+      "first_pullback_time": "2026-06-25T18:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 1,
+      "time_of_recovery_new_close_high": "2026-06-25T15:00:00Z",
+      "n_up_legs_variant": 2,
+      "n_down_legs_variant": 3,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0388_20260625T120000Z",
+        "first_l0_time": "2026-06-25T12:00:00Z",
+        "last_l0_time": "2026-06-25T15:00:00Z",
+        "l0_count": 2,
+        "cluster_low_time": "2026-06-25T12:00:00Z",
+        "first_l0_setup_score": 65,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.13577456298975288,
+        "bar_of_max_gain_close": 34,
+        "min_return_close": -0.0024110910186858625,
+        "bar_of_min_return_close": 4,
+        "final_return_close": 0.10608800482218217,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 6,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 5,
+        "max_drawdown_from_running_high": 0.07080673244341258,
+        "bar_of_max_drawdown": 0,
+        "retracement_ratio_of_peak_gain": 0.5215021936675759,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 1,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 5,
+        "n_up_legs_variant": 2,
+        "n_down_legs_variant": 3,
+        "longest_up_leg_bars_variant": 10,
+        "largest_up_leg_gain_variant": 0.07507820646506791,
+        "btc_window_return": -0.004687959779053896,
+        "sol_window_return": 0.10608800482218217,
+        "sol_minus_btc_window_return": 0.11077596460123607,
+        "btc_above_sma_share": 0.35,
+        "btc_up_and_rising_share": 0.05,
+        "btc_velocity5_mean": -0.0006703337064331796,
+        "btc_missing_rows": 0,
+        "stratum": "S03_up_normal_pullback_recover",
+        "overlay_flags": [
+          "S10_sol_strong_btc_weak",
+          "S11_recent"
+        ],
+        "selection_reasons": [
+          "stratum:S03_up_normal_pullback_recover"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [],
+        "T": [],
+        "W": [],
+        "X": [],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "ACTIVE"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "ACTIVE"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 4,
+      "recovery_dim_changes_to_stronger": {
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "recovery_dim_changes_all": {
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "x_preceding_3bar_weakness": [],
+      "x_preceding_bars_with_2plus_weak_dims": null,
+      "bars_with_2plus_weak_dims": 22,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S10_sol_strong_btc_weak",
+        "S11_recent"
+      ],
+      "selection_reasons": [
+        "stratum:S03_up_normal_pullback_recover"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 5,
+        "n_up_legs_variant": 2,
+        "n_down_legs_variant": 3
+      }
+    },
+    {
+      "event_id": "L0C0396_20260729T210000Z",
+      "first_l0_time": "2026-07-29T21:00:00Z",
+      "last_l0_time": "2026-07-30T03:00:00Z",
+      "l0_count": 2,
+      "cluster_low_time": "2026-07-29T21:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S06_no_valid_up_outcome",
+      "markers_present": {
+        "L0": [
+          "2026-07-29T21:00:00Z",
+          "2026-07-30T03:00:00Z",
+          "2026-08-01T09:00:00Z",
+          "2026-08-01T18:00:00Z"
+        ],
+        "F5": [
+          "2026-07-30T06:00:00Z",
+          "2026-08-02T03:00:00Z"
+        ],
+        "T": [
+          "2026-07-30T15:00:00Z",
+          "2026-08-03T00:00:00Z"
+        ],
+        "X": [
+          "2026-07-31T06:00:00Z",
+          "2026-08-02T09:00:00Z",
+          "2026-08-03T03:00:00Z"
+        ],
+        "EL": [
+          "2026-08-01T15:00:00Z",
+          "2026-08-01T18:00:00Z"
+        ],
+        "EL+": [
+          "2026-08-01T15:00:00Z",
+          "2026-08-01T18:00:00Z"
+        ],
+        "FL5": [
+          "2026-08-02T03:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2026-07-30T00:00:00Z",
+      "first_close_above_l0_high_bar": 1,
+      "first_close_above_sma20_bar": 3,
+      "max_gain_close": 0.014657980456026065,
+      "bar_of_max_gain_close": 6,
+      "time_of_max_gain_close": "2026-07-30T15:00:00Z",
+      "final_return_close": 0.0024429967426709,
+      "max_drawdown_from_running_high": 0.0625581086465667,
+      "bar_of_max_drawdown": 23,
+      "time_of_max_drawdown": "2026-08-01T18:00:00Z",
+      "retracement_ratio_of_peak_gain": 4.267853189887993,
+      "first_pullback_bar": 10,
+      "first_pullback_time": "2026-07-31T03:00:00Z",
+      "recovered_new_close_high_after_drawdown": false,
+      "bar_of_recovery_new_close_high": null,
+      "time_of_recovery_new_close_high": null,
+      "n_up_legs_variant": 2,
+      "n_down_legs_variant": 2,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0396_20260729T210000Z",
+        "first_l0_time": "2026-07-29T21:00:00Z",
+        "last_l0_time": "2026-07-30T03:00:00Z",
+        "l0_count": 2,
+        "cluster_low_time": "2026-07-29T21:00:00Z",
+        "first_l0_setup_score": 70,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.014657980456026065,
+        "bar_of_max_gain_close": 6,
+        "min_return_close": -0.028773072747014128,
+        "bar_of_min_return_close": 23,
+        "final_return_close": 0.0024429967426709,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 1,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 3,
+        "max_drawdown_from_running_high": 0.0625581086465667,
+        "bar_of_max_drawdown": 23,
+        "retracement_ratio_of_peak_gain": 4.267853189887993,
+        "recovered_new_close_high_after_drawdown": false,
+        "bar_of_recovery_new_close_high": null,
+        "bars_peak_to_trough": 17,
+        "n_up_legs": 0,
+        "n_legs_variant": 4,
+        "n_up_legs_variant": 2,
+        "n_down_legs_variant": 2,
+        "longest_up_leg_bars_variant": 10,
+        "largest_up_leg_gain_variant": 0.028926774734488347,
+        "btc_window_return": -0.003264082990384498,
+        "sol_window_return": 0.0024429967426709,
+        "sol_minus_btc_window_return": 0.005707079733055398,
+        "btc_above_sma_share": 0.45,
+        "btc_up_and_rising_share": 0.225,
+        "btc_velocity5_mean": -0.0003205122257446803,
+        "btc_missing_rows": 0,
+        "stratum": "S06_no_valid_up_outcome",
+        "overlay_flags": [
+          "S11_recent"
+        ],
+        "selection_reasons": [
+          "stratum:S06_no_valid_up_outcome"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2026-07-30T06:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.3333333333333333
+          },
+          {
+            "marker": "F5",
+            "time": "2026-08-02T03:00:00Z",
+            "leg_index": 3,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.3333333333333333
+          }
+        ],
+        "T": [
+          {
+            "marker": "T",
+            "time": "2026-07-30T15:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.6666666666666666
+          },
+          {
+            "marker": "T",
+            "time": "2026-08-03T00:00:00Z",
+            "leg_index": 4,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.14285714285714285
+          }
+        ],
+        "W": [],
+        "X": [
+          {
+            "marker": "X",
+            "time": "2026-07-31T06:00:00Z",
+            "leg_index": 2,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.14285714285714285
+          },
+          {
+            "marker": "X",
+            "time": "2026-08-02T09:00:00Z",
+            "leg_index": 3,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.5555555555555556
+          },
+          {
+            "marker": "X",
+            "time": "2026-08-03T03:00:00Z",
+            "leg_index": 4,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.2857142857142857
+          }
+        ],
+        "R": []
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "COOLING",
+          "EXPANDING"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 4,
+      "recovery_dim_changes_to_stronger": {},
+      "recovery_dim_changes_all": {},
+      "x_preceding_3bar_weakness": [
+        {
+          "bar": 8,
+          "time": "2026-07-30T21:00:00Z",
+          "weak_dim_count": 1
+        },
+        {
+          "bar": 9,
+          "time": "2026-07-31T00:00:00Z",
+          "weak_dim_count": 3
+        },
+        {
+          "bar": 10,
+          "time": "2026-07-31T03:00:00Z",
+          "weak_dim_count": 3
+        }
+      ],
+      "x_preceding_bars_with_2plus_weak_dims": 2,
+      "bars_with_2plus_weak_dims": 23,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S11_recent"
+      ],
+      "selection_reasons": [
+        "stratum:S06_no_valid_up_outcome"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 4,
+        "n_up_legs_variant": 2,
+        "n_down_legs_variant": 2
+      }
+    },
+    {
+      "event_id": "L0C0399_20260910T120000Z",
+      "first_l0_time": "2026-09-10T12:00:00Z",
+      "last_l0_time": "2026-09-10T12:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2026-09-10T12:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S09_other_mixed",
+      "markers_present": {
+        "L0": [
+          "2026-09-10T12:00:00Z",
+          "2026-09-11T06:00:00Z"
+        ],
+        "F5": [
+          "2026-09-11T12:00:00Z"
+        ],
+        "T": [
+          "2026-09-12T15:00:00Z"
+        ],
+        "X": [
+          "2026-09-13T06:00:00Z",
+          "2026-09-15T03:00:00Z"
+        ],
+        "R": [
+          "2026-09-14T06:00:00Z"
+        ],
+        "EL": [
+          "2026-09-10T12:00:00Z",
+          "2026-09-11T12:00:00Z"
+        ],
+        "EL+": [
+          "2026-09-10T12:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 8,
+      "first_close_above_l0_close_time": "2026-09-11T12:00:00Z",
+      "first_close_above_l0_high_bar": 8,
+      "first_close_above_sma20_bar": 8,
+      "max_gain_close": 0.037620995908592025,
+      "bar_of_max_gain_close": 34,
+      "time_of_max_gain_close": "2026-09-14T18:00:00Z",
+      "final_return_close": 0.006486378604929621,
+      "max_drawdown_from_running_high": 0.07372400756143664,
+      "bar_of_max_drawdown": 8,
+      "time_of_max_drawdown": "2026-09-11T12:00:00Z",
+      "retracement_ratio_of_peak_gain": 1.9596506094778654,
+      "first_pullback_bar": 1,
+      "first_pullback_time": "2026-09-10T15:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 34,
+      "time_of_recovery_new_close_high": "2026-09-14T18:00:00Z",
+      "n_up_legs_variant": 2,
+      "n_down_legs_variant": 2,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0399_20260910T120000Z",
+        "first_l0_time": "2026-09-10T12:00:00Z",
+        "last_l0_time": "2026-09-10T12:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2026-09-10T12:00:00Z",
+        "first_l0_setup_score": 80,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.037620995908592025,
+        "bar_of_max_gain_close": 34,
+        "min_return_close": -0.015367727771679385,
+        "bar_of_min_return_close": 3,
+        "final_return_close": 0.006486378604929621,
+        "first_positive_close_bar": 8,
+        "first_close_above_l0_high_bar": 8,
+        "first_new_close_high_bar": 8,
+        "first_close_above_sma20_bar": 8,
+        "max_drawdown_from_running_high": 0.07372400756143664,
+        "bar_of_max_drawdown": 8,
+        "retracement_ratio_of_peak_gain": 1.9596506094778654,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 34,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 4,
+        "n_up_legs_variant": 2,
+        "n_down_legs_variant": 2,
+        "longest_up_leg_bars_variant": 9,
+        "largest_up_leg_gain_variant": 0.030635665103283083,
+        "btc_window_return": -0.006097245117391958,
+        "sol_window_return": 0.006486378604929621,
+        "sol_minus_btc_window_return": 0.01258362372232158,
+        "btc_above_sma_share": 0.375,
+        "btc_up_and_rising_share": 0.225,
+        "btc_velocity5_mean": -0.00022373358862108993,
+        "btc_missing_rows": 0,
+        "stratum": "S09_other_mixed",
+        "overlay_flags": [
+          "S11_recent"
+        ],
+        "selection_reasons": [
+          "stratum:S09_other_mixed"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2026-09-11T12:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "末端",
+            "relative_ratio": 1.0
+          }
+        ],
+        "T": [
+          {
+            "marker": "T",
+            "time": "2026-09-12T15:00:00Z",
+            "leg_index": 2,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.45
+          }
+        ],
+        "W": [],
+        "X": [
+          {
+            "marker": "X",
+            "time": "2026-09-13T06:00:00Z",
+            "leg_index": 2,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.7
+          },
+          {
+            "marker": "X",
+            "time": "2026-09-15T03:00:00Z",
+            "leg_index": 4,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.6
+          }
+        ],
+        "R": [
+          {
+            "marker": "R",
+            "time": "2026-09-14T06:00:00Z",
+            "leg_index": 3,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.3333333333333333
+          }
+        ]
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "UP-ATTEMPT"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "UP-ATTEMPT"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 0,
+      "recovery_dim_changes_to_stronger": {
+        "direction_control": [
+          "UP-ATTEMPT",
+          "UP"
+        ]
+      },
+      "recovery_dim_changes_all": {
+        "direction_control": [
+          "UP-ATTEMPT",
+          "UP"
+        ]
+      },
+      "x_preceding_3bar_weakness": [
+        {
+          "bar": 19,
+          "time": "2026-09-12T21:00:00Z",
+          "weak_dim_count": 4
+        },
+        {
+          "bar": 20,
+          "time": "2026-09-13T00:00:00Z",
+          "weak_dim_count": 4
+        },
+        {
+          "bar": 21,
+          "time": "2026-09-13T03:00:00Z",
+          "weak_dim_count": 4
+        }
+      ],
+      "x_preceding_bars_with_2plus_weak_dims": 3,
+      "bars_with_2plus_weak_dims": 28,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S11_recent"
+      ],
+      "selection_reasons": [
+        "stratum:S09_other_mixed"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 4,
+        "n_up_legs_variant": 2,
+        "n_down_legs_variant": 2
+      }
+    },
+    {
+      "event_id": "L0C0400_20260911T060000Z",
+      "first_l0_time": "2026-09-11T06:00:00Z",
+      "last_l0_time": "2026-09-11T06:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2026-09-11T06:00:00Z",
+      "bars_available": 40,
+      "right_censored": false,
+      "stratum": "S07_brief_up_then_fail",
+      "markers_present": {
+        "L0": [
+          "2026-09-11T06:00:00Z"
+        ],
+        "F5": [
+          "2026-09-11T12:00:00Z"
+        ],
+        "T": [
+          "2026-09-12T15:00:00Z"
+        ],
+        "X": [
+          "2026-09-13T06:00:00Z",
+          "2026-09-15T03:00:00Z"
+        ],
+        "R": [
+          "2026-09-14T06:00:00Z"
+        ],
+        "EL": [
+          "2026-09-11T12:00:00Z",
+          "2026-09-15T12:00:00Z",
+          "2026-09-15T18:00:00Z"
+        ],
+        "EL+": [
+          "2026-09-15T12:00:00Z",
+          "2026-09-15T18:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 2,
+      "first_close_above_l0_close_time": "2026-09-11T12:00:00Z",
+      "first_close_above_l0_high_bar": 2,
+      "first_close_above_sma20_bar": 2,
+      "max_gain_close": 0.04052836985890118,
+      "bar_of_max_gain_close": 28,
+      "time_of_max_gain_close": "2026-09-14T18:00:00Z",
+      "final_return_close": -0.027018913239267528,
+      "max_drawdown_from_running_high": 0.09432892249527414,
+      "bar_of_max_drawdown": 36,
+      "time_of_max_drawdown": "2026-09-15T18:00:00Z",
+      "retracement_ratio_of_peak_gain": 2.327478820975989,
+      "first_pullback_bar": 3,
+      "first_pullback_time": "2026-09-11T15:00:00Z",
+      "recovered_new_close_high_after_drawdown": false,
+      "bar_of_recovery_new_close_high": null,
+      "time_of_recovery_new_close_high": null,
+      "n_up_legs_variant": 3,
+      "n_down_legs_variant": 2,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0400_20260911T060000Z",
+        "first_l0_time": "2026-09-11T06:00:00Z",
+        "last_l0_time": "2026-09-11T06:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2026-09-11T06:00:00Z",
+        "first_l0_setup_score": 65,
+        "bars_available": 40,
+        "right_censored": false,
+        "max_gain_close": 0.04052836985890118,
+        "bar_of_max_gain_close": 28,
+        "min_return_close": -0.030521364955468977,
+        "bar_of_min_return_close": 37,
+        "final_return_close": -0.027018913239267528,
+        "first_positive_close_bar": 2,
+        "first_close_above_l0_high_bar": 2,
+        "first_new_close_high_bar": 2,
+        "first_close_above_sma20_bar": 2,
+        "max_drawdown_from_running_high": 0.09432892249527414,
+        "bar_of_max_drawdown": 36,
+        "retracement_ratio_of_peak_gain": 2.327478820975989,
+        "recovered_new_close_high_after_drawdown": false,
+        "bar_of_recovery_new_close_high": null,
+        "bars_peak_to_trough": 8,
+        "n_up_legs": 0,
+        "n_legs_variant": 5,
+        "n_up_legs_variant": 3,
+        "n_down_legs_variant": 2,
+        "longest_up_leg_bars_variant": 7,
+        "largest_up_leg_gain_variant": 0.033523466426498505,
+        "btc_window_return": -0.018133797833204235,
+        "sol_window_return": -0.027018913239267528,
+        "sol_minus_btc_window_return": -0.008885115406063293,
+        "btc_above_sma_share": 0.375,
+        "btc_up_and_rising_share": 0.225,
+        "btc_velocity5_mean": -0.00031809893224904543,
+        "btc_missing_rows": 0,
+        "stratum": "S07_brief_up_then_fail",
+        "overlay_flags": [
+          "S08_multi_attack_multi_pullback",
+          "S11_recent"
+        ],
+        "selection_reasons": [
+          "stratum:S07_brief_up_then_fail"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2026-09-11T12:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "末端",
+            "relative_ratio": 1.0
+          }
+        ],
+        "T": [
+          {
+            "marker": "T",
+            "time": "2026-09-12T15:00:00Z",
+            "leg_index": 2,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.45
+          }
+        ],
+        "W": [],
+        "X": [
+          {
+            "marker": "X",
+            "time": "2026-09-13T06:00:00Z",
+            "leg_index": 2,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.7
+          },
+          {
+            "marker": "X",
+            "time": "2026-09-15T03:00:00Z",
+            "leg_index": 4,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.375
+          }
+        ],
+        "R": [
+          {
+            "marker": "R",
+            "time": "2026-09-14T06:00:00Z",
+            "leg_index": 3,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.3333333333333333
+          }
+        ]
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 4,
+      "recovery_dim_changes_to_stronger": {},
+      "recovery_dim_changes_all": {},
+      "x_preceding_3bar_weakness": [
+        {
+          "bar": 13,
+          "time": "2026-09-12T21:00:00Z",
+          "weak_dim_count": 4
+        },
+        {
+          "bar": 14,
+          "time": "2026-09-13T00:00:00Z",
+          "weak_dim_count": 4
+        },
+        {
+          "bar": 15,
+          "time": "2026-09-13T03:00:00Z",
+          "weak_dim_count": 4
+        }
+      ],
+      "x_preceding_bars_with_2plus_weak_dims": 3,
+      "bars_with_2plus_weak_dims": 28,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S08_multi_attack_multi_pullback",
+        "S11_recent"
+      ],
+      "selection_reasons": [
+        "stratum:S07_brief_up_then_fail"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 5,
+        "n_up_legs_variant": 3,
+        "n_down_legs_variant": 2
+      }
+    },
+    {
+      "event_id": "L0C0401_20260916T210000Z",
+      "first_l0_time": "2026-09-16T21:00:00Z",
+      "last_l0_time": "2026-09-16T21:00:00Z",
+      "l0_count": 1,
+      "cluster_low_time": "2026-09-16T21:00:00Z",
+      "bars_available": 38,
+      "right_censored": true,
+      "stratum": "S01_direct_steady_up",
+      "markers_present": {
+        "L0": [
+          "2026-09-16T21:00:00Z"
+        ],
+        "F5": [
+          "2026-09-17T06:00:00Z"
+        ],
+        "T": [
+          "2026-09-17T21:00:00Z"
+        ],
+        "W": [
+          "2026-09-19T03:00:00Z"
+        ],
+        "X": [
+          "2026-09-20T00:00:00Z"
+        ],
+        "R": [
+          "2026-09-20T21:00:00Z"
+        ]
+      },
+      "first_close_above_l0_close_bar": 1,
+      "first_close_above_l0_close_time": "2026-09-17T00:00:00Z",
+      "first_close_above_l0_high_bar": 1,
+      "first_close_above_sma20_bar": 2,
+      "max_gain_close": 0.1965335495641598,
+      "bar_of_max_gain_close": 37,
+      "time_of_max_gain_close": "2026-09-21T12:00:00Z",
+      "final_return_close": 0.1965335495641598,
+      "max_drawdown_from_running_high": 0.06053184044786553,
+      "bar_of_max_drawdown": 25,
+      "time_of_max_drawdown": "2026-09-20T00:00:00Z",
+      "retracement_ratio_of_peak_gain": 0.30799749244901553,
+      "first_pullback_bar": 18,
+      "first_pullback_time": "2026-09-19T03:00:00Z",
+      "recovered_new_close_high_after_drawdown": true,
+      "bar_of_recovery_new_close_high": 35,
+      "time_of_recovery_new_close_high": "2026-09-21T06:00:00Z",
+      "n_up_legs_variant": 2,
+      "n_down_legs_variant": 1,
+      "leg_variant_used": "swing5",
+      "btc": {
+        "event_id": "L0C0401_20260916T210000Z",
+        "first_l0_time": "2026-09-16T21:00:00Z",
+        "last_l0_time": "2026-09-16T21:00:00Z",
+        "l0_count": 1,
+        "cluster_low_time": "2026-09-16T21:00:00Z",
+        "first_l0_setup_score": 60,
+        "bars_available": 38,
+        "right_censored": true,
+        "max_gain_close": 0.1965335495641598,
+        "bar_of_max_gain_close": 37,
+        "min_return_close": 0.0,
+        "bar_of_min_return_close": 0,
+        "final_return_close": 0.1965335495641598,
+        "first_positive_close_bar": 1,
+        "first_close_above_l0_high_bar": 1,
+        "first_new_close_high_bar": 1,
+        "first_close_above_sma20_bar": 2,
+        "max_drawdown_from_running_high": 0.06053184044786553,
+        "bar_of_max_drawdown": 25,
+        "retracement_ratio_of_peak_gain": 0.30799749244901553,
+        "recovered_new_close_high_after_drawdown": true,
+        "bar_of_recovery_new_close_high": 35,
+        "bars_peak_to_trough": null,
+        "n_up_legs": 0,
+        "n_legs_variant": 3,
+        "n_up_legs_variant": 2,
+        "n_down_legs_variant": 1,
+        "longest_up_leg_bars_variant": 16,
+        "largest_up_leg_gain_variant": 0.15041556861950145,
+        "btc_window_return": 0.12647467043609817,
+        "sol_window_return": 0.1965335495641598,
+        "sol_minus_btc_window_return": 0.07005887912806164,
+        "btc_above_sma_share": 0.9210526315789473,
+        "btc_up_and_rising_share": 0.7631578947368421,
+        "btc_velocity5_mean": 0.002487005643267711,
+        "btc_missing_rows": 0,
+        "stratum": "S01_direct_steady_up",
+        "overlay_flags": [
+          "S11_recent"
+        ],
+        "selection_reasons": [
+          "stratum:S01_direct_steady_up",
+          "mandatory:current_case"
+        ]
+      },
+      "marker_in_legs": {
+        "F5": [
+          {
+            "marker": "F5",
+            "time": "2026-09-17T06:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "起点",
+            "relative_ratio": 0.2
+          }
+        ],
+        "T": [
+          {
+            "marker": "T",
+            "time": "2026-09-17T21:00:00Z",
+            "leg_index": 1,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.5333333333333333
+          }
+        ],
+        "W": [
+          {
+            "marker": "W",
+            "time": "2026-09-19T03:00:00Z",
+            "leg_index": 2,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.2727272727272727
+          }
+        ],
+        "X": [
+          {
+            "marker": "X",
+            "time": "2026-09-20T00:00:00Z",
+            "leg_index": 2,
+            "leg_kind": "DOWN_LEG",
+            "relative_position": "末端",
+            "relative_ratio": 0.9090909090909091
+          }
+        ],
+        "R": [
+          {
+            "marker": "R",
+            "time": "2026-09-20T21:00:00Z",
+            "leg_index": 3,
+            "leg_kind": "UP_LEG",
+            "relative_position": "中段",
+            "relative_ratio": 0.5454545454545454
+          }
+        ]
+      },
+      "descriptive_note": "以下「描述性锚点」用于把路径讲清楚（例如某根回撤超过 2% 才算可观察回调），仅为本轮案例描述的说明性取值，不是 FORMAL 阈值、不用于定义进攻/回调/恢复。",
+      "pullback_dim_changes_weaker": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "COOLING"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_dim_changes_all": {
+        "direction_control": [
+          "UP",
+          "WEAK"
+        ],
+        "volume_drive": [
+          "EXPANDING",
+          "COOLING"
+        ],
+        "velocity": [
+          "FAST-UP",
+          "DOWN"
+        ],
+        "path_quality": [
+          "IMPROVING",
+          "WEAK"
+        ],
+        "velocity_phase": [
+          "POSITIVE",
+          "NEGATIVE"
+        ]
+      },
+      "pullback_weak_dim_count_at_deepest": 5,
+      "recovery_dim_changes_to_stronger": {
+        "direction_control": [
+          "WEAK",
+          "UP"
+        ],
+        "volume_drive": [
+          "COOLING",
+          "EXPANDING"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "recovery_dim_changes_all": {
+        "direction_control": [
+          "WEAK",
+          "UP"
+        ],
+        "volume_drive": [
+          "COOLING",
+          "EXPANDING"
+        ],
+        "velocity": [
+          "DOWN",
+          "FAST-UP"
+        ],
+        "path_quality": [
+          "WEAK",
+          "IMPROVING"
+        ],
+        "velocity_phase": [
+          "NEGATIVE",
+          "POSITIVE"
+        ]
+      },
+      "x_preceding_3bar_weakness": [
+        {
+          "bar": 22,
+          "time": "2026-09-19T15:00:00Z",
+          "weak_dim_count": 4
+        },
+        {
+          "bar": 23,
+          "time": "2026-09-19T18:00:00Z",
+          "weak_dim_count": 4
+        },
+        {
+          "bar": 24,
+          "time": "2026-09-19T21:00:00Z",
+          "weak_dim_count": 4
+        }
+      ],
+      "x_preceding_bars_with_2plus_weak_dims": 3,
+      "bars_with_2plus_weak_dims": 13,
+      "max_weak_dim_count": 5,
+      "overlay_flags": [
+        "S11_recent"
+      ],
+      "selection_reasons": [
+        "stratum:S01_direct_steady_up",
+        "mandatory:current_case"
+      ],
+      "leg_summary": {
+        "n_legs_variant": 3,
+        "n_up_legs_variant": 2,
+        "n_down_legs_variant": 1
+      }
+    }
+  ]
+}
